@@ -10,7 +10,7 @@
 
     <nav id="navbar">
 
-        <div class="row">
+        <div class="row menu">
             <div class="logo"></div>
 
             <div class="user">
@@ -22,11 +22,33 @@
             <div class="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</div>
         </div>
 
+        <div class="row" id="order-process">
+
+            <div class="process">
+                <div class="step active">Where and When</div>
+                <div class="step">Selection</div>
+                <div class="step active">Validation</div>
+            </div>
+
+           <!-- <ul>
+                <li>Where and When</li>
+                <li>Selection</li>
+                <li>Validation</li>
+            </ul>-->
+
+        </div>
+
     </nav>
 
     <div id="container">
 
     </div>
+
+    <footer id="footer">
+        <div class="row">
+            <p>Bread express is a trademak brand. We want to make your life easier tasty too !</p>
+        </div>
+    </footer>
 
 </body>
 

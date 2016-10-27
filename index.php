@@ -11,7 +11,11 @@
     <nav id="navbar">
 
         <div class="row menu">
-            <div class="logo"></div>
+            <div class="logo">
+                <!--<img class="hidden-lg"src="assets/img/logo240.png" />
+                <img class="hidden-sm"src="assets/img/logo.png" />-->
+                <img src="assets/img/logodemi.png" />
+            </div>
 
             <div class="user">
                 <div><i class="fa fa-user" aria-hidden="true"></i>Sign in</div>
@@ -25,9 +29,9 @@
         <div class="row" id="order-process">
 
             <div class="process">
-                <div class="step active">Where and When</div>
+                <div class="step active">Where and When ?</div>
                 <div class="step">Selection</div>
-                <div class="step active">Validation</div>
+                <div class="step">Validation</div>
             </div>
 
            <!-- <ul>

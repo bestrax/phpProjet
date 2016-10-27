@@ -3,7 +3,7 @@
 }
 
 #navbar {
-    background-color: #2c3e50;
+    background-color: #263238;
     color: white;
     position: fixed;
     top: 0;
@@ -11,8 +11,8 @@
     width: 100%;
     margin : 0;
     padding: 0;
-    height: 15vh;
-    min-height: 50px;
+    height: 10vh;
+    min-height: 100px;
 }
 
 #navbar .row {
@@ -22,7 +22,8 @@
 }
 
 #navbar .row.menu {
-    min-height: 10vh;
+    height: 5vh;
+    min-height: 50px;
 }
 
 #navbar .row div {
@@ -30,23 +31,47 @@
 }
 
 #navbar .row .logo {
-    height: 20vh;
-    width: 35vh;
+    height: 100px;
+    width: 200px;
     background-color: red;
-    background-size: cover;
+    background-size: 100%;
+    background-repeat: no-repeat;
     position: absolute;
     z-index: 3;
 }
 
-@media(min-width: 767px) {
+#navbar .row .logo img {
+    height: 100%;
+    width: 100%;
+}
+
+@media(max-width:767px) {
     #navbar .row .logo {
-        margin-left: 20vw;
+        display: none;
+    }
+}
+
+@media(min-height: 1000px) {
+    #navbar .row .logo {
+        height: 10vh;
     }
 }
 
 #navbar .row .user {
-    margin-left: calc(35vh + 20vw + 20px);
+    margin-left: calc(20px);
 }
+
+@media(min-width: 767px) {
+    #navbar .row .logo {
+        margin-left: 10vw;
+    }
+
+    #navbar .row .user {
+        margin-left: calc(10vw + 220px);
+    }
+}
+
+
 
 #navbar .row .user div:not(:first-child) {
     margin-left: 20px;
@@ -63,12 +88,13 @@
 }
 
 #order-process {
-    background-color: #f39c12;
-    height: 10vh;
+    background-color: #FFCC80;
+    height: 5vh;
+    min-height: 50px;
 }
 
 #order-process .step {
-    background-color: #f39c12;
+    background-color: #FFCC80;
     height: 100%;
     display: flex;
     flex-direction: row;
@@ -79,6 +105,7 @@
     padding-right: 60px;
     padding-left: 60px;
     text-align: center;
+    text-transform: uppercase;
 }
 
 #order-process .step:before {
@@ -87,12 +114,12 @@
     position: absolute;
     left: 100%;
     top: 50%;
-    margin-top: -5vh;
+    margin-top: -25px;
     width: 0;
     height: 0;
-    border-top: 5vh solid transparent;
-    border-right: 5vh solid transparent;
-    border-bottom: 5vh solid transparent;
+    border-top: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 25px solid transparent;
     border-left: 20px solid #ecf0f1;
 }
 
@@ -102,32 +129,63 @@
     position: absolute;
     left: calc(100% - 0.5px);
     top: 50%;
-    margin-top: -5vh;
+    margin-top: -25px;
     width: 0;
     height: 0;
-    border-top: 5vh solid transparent;
-    border-right: 5vh solid transparent;
-    border-bottom: 5vh solid transparent;
-    border-left: 20px solid #f39c12;
+    border-top: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+    border-left: 20px solid #FFCC80;
+}
+
+@media(min-height: 1000px) {
+    #order-process .step:before {
+        margin-top: -2.5vh;
+        border-top: 2.5vh solid transparent;
+        border-right: 2.5vh solid transparent;
+        border-bottom: 2.5vh solid transparent;
+    }
+
+    #order-process .step:after {
+        margin-top: -2.5vh;
+        border-top: 2.5vh solid transparent;
+        border-right: 2.5vh solid transparent;
+        border-bottom: 2.5vh solid transparent;
+    }
 }
 
 #order-process .step.active{
-    background-color: #e67e22;
+    background-color: #F57C00;
     margin-left: -5vh;
     padding-left: calc(5vh + 60px);
     z-index: 1;
 }
 
 #order-process .process .step:first-child {
-    padding-left: calc(30vw + 60px + 5vh);
+    padding-left: calc(10vw + 260px + 5vh);
 }
 
 #order-process .step.active:after {
-    border-left: 20px solid #e67e22;
+    border-left: 20px solid #F57C00;
+}
+
+@media(max-width: 1170px) {
+    #order-process .step {
+        font-size: small;
+    }
+}
+
+@media(max-width: 970px) {
+    #order-process .step:not(.active) {
+        display: none;
+    }
+    #order-process .step {
+        padding-left: 50vw!important;
+    }
 }
 
 #footer {
-    background-color: #34495e;
+    background-color: #263238;
     color: #95a5a6;
     position: fixed;
     bottom: 0;

@@ -50,12 +50,12 @@
 
                 <div class="form-control">
                     <label for="username">Username</label>
-                    <input type="text" name="username" />
+                    <input type="text" name="username" id="username"/>
                 </div>
 
                 <div class="form-control">
                     <label for="password">Password</label>
-                    <input type="text" name="password" />
+                    <input type="text" name="password" id="password" />
                 </div>
 
                 <div class="form-submit">
@@ -77,8 +77,8 @@
             <form>
 
                 <div class="form-control">
-                    <label for="username">e-mail</label>
-                    <input type="text" name="email" />
+                    <label for="email">e-mail</label>
+                    <input type="text" name="email" id="email" />
                 </div>
 
                 <div class="form-submit">

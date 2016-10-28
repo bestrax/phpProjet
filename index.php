@@ -14,7 +14,7 @@
 
         <div class="row menu">
             <div class="logo">
-                <a href="index.php"><img src="assets/img/logodemi.svg" /></a>
+                <a href="index.php"><img src="assets/img/logodemi.jpg" /></a>
             </div>
 
             <div class="user">

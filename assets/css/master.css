@@ -76,8 +76,6 @@ body {
     }
 }
 
-
-
 #navbar .row .user div:not(:first-child) {
     margin-left: 20px;
 }
@@ -100,7 +98,7 @@ body {
 
 #order-process .step {
     background-color: #FFCC80;
-    height: 100%;
+    height: 40px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -140,6 +138,11 @@ body {
 }
 
 @media(min-height: 1000px) {
+
+    #order-process .step {
+        height: 5vh;
+    }
+
     #order-process .step:before {
         margin-top: -2.5vh;
         border-top: 2.5vh solid transparent;
@@ -194,8 +197,9 @@ body {
 
 @media(max-height: 1000px) {
     #container {
-        margin-top: 100px;
+        margin-top: 90px;
         min-height: calc(100vh - 150px);
+        margin-bottom: 50px;
     }
 }
 
@@ -240,6 +244,10 @@ body {
 .no-link, .no-link:hover{
     text-decoration: none;
     color: white;
+}
+
+.form-control {
+    margin-top: 0.25em;
 }
 
 

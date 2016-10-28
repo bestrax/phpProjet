@@ -14,12 +14,12 @@
 
     <div class="row menu">
         <div class="logo">
-            <img src="assets/img/logodemi.svg" />
+            <a href="index.php"><img src="assets/img/logodemi.svg" /></a>
         </div>
 
         <div class="user">
-            <div><i class="fa fa-user" aria-hidden="true"></i>Sign in</div>
-            <div><i class="fa fa-edit" aria-hidden="true"></i>Register</div>
+            <div><a href="login.php" class="no-link"><i class="fa fa-user" aria-hidden="true"></i>Sign in</a></div>
+            <div><a href="register.php" class="no-link"><i class="fa fa-edit" aria-hidden="true"></i>Register</a></div>
         </div>
 
         <div class="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</div>

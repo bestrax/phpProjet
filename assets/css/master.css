@@ -236,3 +236,12 @@ body {
 .btn-lg {
     padding: .5em 2em;
 }
+
+.no-link, .no-link:hover{
+    text-decoration: none;
+    color: white;
+}
+
+
+
+

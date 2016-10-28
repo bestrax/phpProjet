@@ -40,13 +40,13 @@
 
     <div class="button_where">
       <p>
-      <p1> Where ? : </p1>
-       <select>
-          <option value="Vieux Montreal">Vieux Montreal</option>
-          <option value="Mont royal">Mont royal</option>
-          <option value="Saint Laurent">Saint Laurent</option>
-        </select>
-     </p>
+            <span class="title1"> Where ? : </span>
+            <select>
+              <option value="Vieux Montreal">Vieux Montreal</option>
+              <option value="Mont royal">Mont royal</option>
+              <option value="Saint Laurent">Saint Laurent</option>
+            </select>
+        </p>
 
     </div>
 
@@ -55,16 +55,15 @@
     <div id="container2">
 
     <div class="button_when">
-      <p>
-      <p2> When ? : </p1>
-       <select>
-             <option value="9h">9h</option>
-             <option value="9h15">9h15</option>
-             <option value="9h30">9h30</option>
-             <option value="9h45">9h45</option>
-        </select>
-     </p2>
-
+        <p>
+            <span class="title1"> Where ? : </span>
+            <select>
+                 <option value="9h">9h</option>
+                 <option value="9h15">9h15</option>
+                 <option value="9h30">9h30</option>
+                 <option value="9h45">9h45</option>
+            </select>
+        </p>
     </div>
 
     </div>

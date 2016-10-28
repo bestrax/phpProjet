@@ -41,6 +41,7 @@ body {
     width: 200px;
     background-size: 100%;
     position: absolute;
+    top: 0;
     z-index: 3;
 }
 
@@ -121,10 +122,8 @@ body {
     margin-top: -20px;
     width: 0;
     height: 0;
-    border-top: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-bottom: 20px solid transparent;
-    border-left: 20px solid #ecf0f1;
+    border: 20px solid transparent;
+    border-left-color: #ecf0f1;
 }
 
 #order-process .step:after {
@@ -136,10 +135,8 @@ body {
     margin-top: -20px;
     width: 0;
     height: 0;
-    border-top: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-bottom: 20px solid transparent;
-    border-left: 20px solid #FFCC80;
+    border: 20px solid transparent;
+    border-left-color: #FFCC80;
 }
 
 @media(min-height: 1000px) {

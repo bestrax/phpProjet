@@ -11,16 +11,27 @@
 
     <nav id="navbar">
 
-        <div class="row">
-            <div class="logo"></div>
+        <div class="row menu">
+            <div class="logo">
+                <img src="assets/img/logodemi.svg" />
+            </div>
 
             <div class="user">
                 <div><i class="fa fa-user" aria-hidden="true"></i>Sign in</div>
                 <div><i class="fa fa-edit" aria-hidden="true"></i>Register</div>
             </div>
 
-
             <div class="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</div>
+        </div>
+
+        <div class="row" id="order-process">
+
+            <div class="process">
+                <div class="step active">Where and When ?</div>
+                <div class="step">Selection</div>
+                <div class="step">Validation</div>
+            </div>
+
         </div>
 
     </nav>
@@ -33,10 +44,10 @@
        <select>
           <option value="Vieux Montreal">Vieux Montreal</option>
           <option value="Mont royal">Mont royal</option>
-          <option value="Saint Laurent">Saint Laurent</option> 
+          <option value="Saint Laurent">Saint Laurent</option>
         </select>
      </p>
-    
+
     </div>
 
     </div>
@@ -53,13 +64,11 @@
              <option value="9h45">9h45</option>
         </select>
      </p2>
-    
-    </div>
 
     </div>
 
+    </div>
 
-    
     <div class="product">
     <a class="title">Croissant</a>
     <img src="croissant.jpg" alt="croissant" />
@@ -79,8 +88,12 @@
         </div>
     </div>
     </div>
-    
-    
+
+    <footer id="footer">
+        <div class="row">
+            <p>Bread express is a trademak brand. We want to make your life easier tasty too !</p>
+        </div>
+    </footer>
 
 </body>
 

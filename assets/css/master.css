@@ -1,3 +1,9 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'ABeeZee', sans-serif;
+}
+
 .row{
     width: 100%;
 }
@@ -184,6 +190,21 @@
     }
 }
 
+#container {
+    margin-top: 10vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    min-height: 85vh;
+}
+
+@media(max-height: 1000px) {
+    #container {
+        margin-top: 100px;
+        min-height: calc(100vh - 150px);
+    }
+}
+
 #footer {
     background-color: #263238;
     color: #95a5a6;
@@ -193,7 +214,7 @@
     width: 100%;
     margin : 0;
     padding: 0;
-    height: 5%;
+    height: 5vh;
     min-height: 50px;
     text-align: center;
     font-size: small;
@@ -204,4 +225,26 @@
 
 #container {
     min-height: 80%;
+}
+
+.button {
+    background-color: #66BB6A;
+    padding-right: 1em;
+    padding-left: 1em;
+    padding-top: .25em;
+    padding-bottom: .25em;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: #4CAF50;
+}
+
+.btn-lg {
+    padding-right: 2em;
+    padding-left: 2em;
+    padding-top: .5em;
+    padding-bottom: .5em;
 }

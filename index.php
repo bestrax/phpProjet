@@ -58,6 +58,28 @@
 
     </div>
 
+
+    
+    <div class="product">
+    <a class="title">Croissant</a>
+    <img src="croissant.jpg" alt="croissant" />
+    <a class="description">Croissant saveur de France ...</a>
+     <a class="prix">1€</a>
+
+
+    <div class="add_sup">
+        <div class="command">
+            <a class="product_minus">-</a>
+            <div class="product_number">1</div>
+            <a class="product_plus">+</a>
+        </div>
+
+        <div >
+            <a class="button">Add</a>
+        </div>
+    </div>
+    </div>
+    
     
 
 </body>

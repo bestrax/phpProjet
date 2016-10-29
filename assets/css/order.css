@@ -9,16 +9,11 @@ select {
 }
 
 
-p1 {
+.title1 {
 	font-size : 40px ;
 	font-family: Garamond ;
 }
 
-p2
-{
-	font-size : 40px ;
-	font-family: Garamond ;
-}
 #container {
 	margin-top: 25%;
 	position: absolute;

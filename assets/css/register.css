@@ -1,0 +1,22 @@
+.head{
+    background-color: #6A1B9A;
+    width: calc(100% - 40px);
+    padding: 20px;
+    font-size: large;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.obligatoire{
+    color:red;
+}
+ p{
+    font-size : 8px;
+ }

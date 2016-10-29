@@ -29,7 +29,7 @@
 
             <div class="process">
                 <div class="step active">Where and When ?</div>
-                <div class="step">Selection</div>
+                <div class="step ">Selection</div>
                 <div class="step">Validation</div>
             </div>
 

@@ -1,0 +1,70 @@
+#container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+@media(min-width: 767px) {
+    #cart {
+        width: 70vw;
+    }
+}
+
+@media(max-width: 767px) {
+    #cart {
+        margin : 5px;
+    }
+}
+
+.previous {
+    margin-bottom: 30px;
+}
+
+.summary {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.summary thead, .summary tfoot {
+    background-color: #6A1B9A;
+    color: white;
+    text-transform: uppercase;
+}
+
+.summary th, .summary td {
+    padding: 0.4em;
+}
+
+.summary thead th, .summary tfoot td {
+    padding: 0.8em;
+}
+
+.summary tbody {
+    background-color: #F3E5F5;
+}
+
+.summary input {
+    max-width: 3em;
+    text-align: center;
+}
+
+.validate {
+    margin-top: 30px;
+    float: right;
+}
+
+.color-red {
+    color: #F44336;
+}
+
+.summary .fa-minus, .summary .fa-plus {
+    font-size: small;
+}
+
+.summary tbody .quantity {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    text-align: center;
+}

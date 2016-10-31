@@ -22,7 +22,7 @@
             <div><a href="register.php" class="no-link"><i class="fa fa-edit" aria-hidden="true"></i>Register</a></div>
         </div>
 
-        <div class="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</div>
+        <div class="cart"><a href="cart.php" class="no-link"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</a></div>
     </div>
 
     <div class="row" id="order-process">
@@ -59,7 +59,7 @@
                 </div>
 
                 <div class="form-submit">
-                    <a type="submit" class="button btn-lg">Sign in</a>
+                    <a type="submit" class="button btn-lg">Sign in <i class="fa fa-arrow-right"></i></a>
                 </div>
 
             </form>
@@ -82,7 +82,7 @@
                 </div>
 
                 <div class="form-submit">
-                    <a type="submit" class="button btn-lg">Register</a>
+                    <a type="submit" class="button btn-lg">Register <i class="fa fa-arrow-right"></i></a>
                 </div>
 
             </form>

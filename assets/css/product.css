@@ -1,17 +1,94 @@
-.content
-{
-      
+.product {
+    margin-top: 100px;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-   
+    border-right-style:groove;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items:center;
+    width:250px;
+    height:300px;
 
 }
 
-.content .categorie{
+.product:hover {
+    box-shadow: 1px 1px 12px #555;
+}
+
+
+.product .add_sup {
+    display:flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    margin-bottom: 30px;
+    font-size: large;
+    font-weight: bold;
+}
+
+.product .add_sup .command {
+    display: flex;
+}
+
+
+.product .title {
+    color :#6A1B9A;
+    font-family:Verdana, Geneva, sans-serif;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    margin-bottom: 30px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.product .description {
+    display: flex;
+    color : #424242;
+    justify-content:center;
+    align-items: center;
+    margin-bottom: 30px;
+    font-size: 13px;
+    font-family: Arial, serif;
+}
+
+.product .prix {
+    display: flex;
+    color :#6A1B9A;
+    justify-content:center;
+    align-items: center;
+    margin-bottom: 30px;
+    font-size: 17px;
+    font-weight: bold;
+    font-family: Arial, serif;
+}
+
+.button {
+    background-color: green;
+    border-right-style: groove;
+}
+
+.command {
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+.product_number {
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.content .categorie {
     background-color: #DDA0DD;
     width: 28%;
     height: 7%;
+    max-height: 2.5em;
     margin-top: 20px;  
     text-align: center;
     text-transform: uppercase;
@@ -21,20 +98,17 @@
     justify-content: center;
 }
 
-.content .categorie:hover{
-
-
+.content .categorie:hover {
     box-shadow: 1px 1px 12px #DDA0DD;
     background-color: purple; 
 
 
 }
-.content .active{
+.content .active {
  	background-color: purple; 
 }
 
-.full{
-
+.full {
 	display: flex;
 	flex-direction: row;
     align-items: center;
@@ -45,87 +119,71 @@
     
 }
 
-.title2{
+.title2 {
     display: flex;
     width: 80%;
     height: 20%;
-    flex-direction: center; 
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     background-color: #DDA0DD;
     color :white;
     font-size: 230%;
     text-transform: uppercase;
-    margin:50px;
-    margin-right: 60px;
-    margin-bottom: 20px;
-    margin-top: 20px;
+    margin: 20px 60px 20px 50px;
 }
 
-
-.title2:hover{
-
+.title2:hover {
     box-shadow: 1px 1px 6px #DDA0DD;
-
 }
 
-.text_resume{
-display:block ;
-float:left;
-
+.text_resume {
+    display:block ;
+    float:left;
 }
 
-.button_order{
+.button_order {
     background-color: green;
     border-right-style:groove;
     margin-bottom: 20px;
-
 }
 
-.button{
+.button {
     margin-left: 10px;
 }
 
 
-.prod_plus{
-
-color:green;
-margin: 7px;
-
+.prod_plus {
+    color: green;
+    margin: 7px;
 }
 
-.prod_minus{
+.prod_minus {
     color :green;
-    
 }
-.prod_cancel{
+
+.prod_cancel {
     color: red;
     margin-left: 10px;
 }
 
-.prod_cancel:hover{
+.prod_cancel:hover {
     box-shadow: 1px 1px 12px #555;
-
 }
 
-.prod_plus:hover{
+.prod_plus:hover {
     box-shadow: 1px 1px 12px #555;
-
 }
 
-.prod_minus:hover{
+.prod_minus:hover {
     box-shadow: 1px 1px 12px #555;
-
 }
 
-
-
-.title3{
-
+.title3 {
     display: flex;
     width: 80%;
     height: 20%;
-    flex-direction: center; 
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     background-color: #DDA0DD;
@@ -133,21 +191,16 @@ margin: 7px;
     font-size: 140%;
     text-transform: uppercase;
     margin-top: 20px;
-
-
-      
 }
 
-.title3:hover{
+.title3:hover {
     box-shadow: 1px 1px 12px #555;
 }
 
 
-.product2{
-    
+.product2 {
     margin-top: 100px;
     display: flex;
-    
     flex-direction: column;
     justify-content:flex-start;
     align-items:center;
@@ -155,10 +208,8 @@ margin: 7px;
     height:260px;
     margin-left: 70px;
     margin-bottom: 60px;
-    
-
 }
 
-.product2:hover{
+.product2:hover {
      box-shadow: 1px 1px 12px #555;
 }

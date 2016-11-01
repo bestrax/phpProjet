@@ -84,7 +84,7 @@
         </div>
 
         <div >
-            <a class="button">Add</a>
+            <a class="button">ADD</a>
         </div>
     </div>
     </div>

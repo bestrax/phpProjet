@@ -22,7 +22,7 @@
                 <div><a href="register.php" class="no-link"><i class="fa fa-edit" aria-hidden="true"></i>Register</a></div>
             </div>
 
-            <div class="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</div>
+            <div class="cart"><a href="cart.php" class="no-link"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</a></div>
         </div>
 
         <div class="row" id="order-process">

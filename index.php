@@ -3,7 +3,7 @@
 <head>
     <title>Bread Express</title>
     <link rel="stylesheet" type="text/css" href="assets/css/master.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/order.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css">
     <link rel="stylesheet" href="assets/lib/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=ABeeZee" rel="stylesheet">
 </head>
@@ -39,61 +39,46 @@
 
     <div id="container">
 
-    <div class="button_where">
-      <p>
-            <span class="title1"> Where ? : </span>
-            <select>
-              <option value="Vieux Montreal">Vieux Montreal</option>
-              <option value="Mont royal">Mont royal</option>
-              <option value="Saint Laurent">Saint Laurent</option>
-            </select>
-        </p>
+        <div class="info">
+            <i class="fa fa-clock-o type" aria-hidden="true"></i>
+            <div>
+                <label for="hour"> When do you want to pick-up ? : </label>
+                <select name="hour" id="hour-selector">
+                    <option value="9h">9PM</option>
+                    <option value="9h15">10PM</option>
+                    <option value="9h30">11PM</option>
+                    <option value="9h45">12PM</option>
+                    <option value="9h">1AM</option>
+                    <option value="9h15">2AM</option>
+                    <option value="9h30">3AM</option>
+                    <option value="9h45">4AM</option>
+                    <option value="9h15">5AM</option>
+                    <option value="9h30">6AM</option>
+                    <option value="9h45">7AM</option>
+                </select>
+                <span class="fa fa-chevron-down select-down" aria-hidden="true"></span>
 
-    </div>
-
-    </div>
-
-    <div id="container2">
-
-    <div class="button_when">
-        <p>
-            <span class="title1"> Where ? : </span>
-            <select>
-                 <option value="9h">9h</option>
-                 <option value="9h15">9h15</option>
-                 <option value="9h30">9h30</option>
-                 <option value="9h45">9h45</option>
-            </select>
-        </p>
-    </div>
-
-    </div>
-
-    <div class="product">
-    <a class="title">Croissant</a>
-    <img src="croissant.jpg" alt="croissant" />
-    <a class="description">Croissant saveur de France ...</a>
-     <a class="prix">1€</a>
-
-
-    <div class="add_sup">
-        <div class="command">
-            <a class="product_minus">-</a>
-            <div class="product_number">1</div>
-            <a class="product_plus">+</a>
+                <a href="product.php" class="button btn-lg no-link">Select product <i class="fa fa-arrow-right"></i></a>
+            </div>
         </div>
 
-        <div >
-            <a class="button">ADD</a>
+        <div class="content">
+            <p>On Bake Express you can order and pay online for the products you want. Then you just need to come to our office to pick-up your order.<br/>
+            You no more less time in waiting for a product that is not available !</p>
+            <div id="map"></div>
         </div>
+
     </div>
-    </div>
+
 
     <footer id="footer">
         <div class="row">
             <p>Bread express is a trademak brand. We want to make your life easier tasty too !</p>
         </div>
     </footer>
+
+    <script src="assets/js/master.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnJ23ZmykJ3XTHmXqQWYiRuKqhV0LyBDI&callback=initMap"></script>
 
 </body>
 

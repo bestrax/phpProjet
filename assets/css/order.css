@@ -1,37 +1,3 @@
-select {
-
-	font-size : 30px ;
-	font-family: Garamond ;
-	border-color:#666699;
-	border-radius :  5px ;
-	color : #990099;
-	margin-right: 50%;
-}
-
-
-.title1 {
-	font-size : 40px ;
-	font-family: Garamond ;
-}
-
-/*
-#container {
-	margin-top: 25%;
-	position: absolute;
-	left :25em;
-	top : -15em;
-	
-}*
-
-#container2 {
-	margin-top: 25%;
-	position: absolute;
-	left :50em;
-	top : -15em;
-	
-}*/
-
-
 .product{
 	
 	margin-top: 100px;

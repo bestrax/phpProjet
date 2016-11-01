@@ -48,7 +48,7 @@
         </div>
 
         <div class="previous">
-            <a href="products.php" class="button btn-lg no-link"><i class="fa fa-arrow-left"></i> Go back</a>
+            <a href="product.php" class="button btn-lg no-link"><i class="fa fa-arrow-left"></i> Go back</a>
         </div>
 
         <table class="summary">

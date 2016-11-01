@@ -1,0 +1,57 @@
+.name{
+
+    background-color: white;
+    width: calc(100% - 40px);
+    padding: 20px;
+    font-size: large;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-right: 30px;
+}
+
+
+.name .list_product{
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+    width: 28%;
+    height: 7%;
+    margin-top: 20px;  
+    text-align: center;
+    text-transform: uppercase;
+    color : white;
+     justify-content: center;
+}
+.file{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 0;
+   justify-content: center;
+   margin-left: 60px;
+    
+}
+.vroum
+{
+      
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+
+}
+
+.head:hover{
+
+
+    box-shadow: 1px 1px 12px #DDA0DD;
+}
+

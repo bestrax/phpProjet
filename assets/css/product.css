@@ -1,0 +1,164 @@
+.content
+{
+      
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+   
+
+}
+
+.content .categorie{
+    background-color: #DDA0DD;
+    width: 28%;
+    height: 7%;
+    margin-top: 20px;  
+    text-align: center;
+    text-transform: uppercase;
+    color : white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content .categorie:hover{
+
+
+    box-shadow: 1px 1px 12px #DDA0DD;
+    background-color: purple; 
+
+
+}
+.content .active{
+ 	background-color: purple; 
+}
+
+.full{
+
+	display: flex;
+	flex-direction: row;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 0;
+   justify-content: center;
+   margin-left: 60px;
+    
+}
+
+.title2{
+    display: flex;
+    width: 80%;
+    height: 20%;
+    flex-direction: center; 
+    align-items: center;
+    justify-content: center;
+    background-color: #DDA0DD;
+    color :white;
+    font-size: 230%;
+    text-transform: uppercase;
+    margin:50px;
+    margin-right: 60px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+
+.title2:hover{
+
+    box-shadow: 1px 1px 6px #DDA0DD;
+
+}
+
+.text_resume{
+display:block ;
+float:left;
+
+}
+
+.button_order{
+    background-color: green;
+    border-right-style:groove;
+    margin-bottom: 20px;
+
+}
+
+.button{
+    margin-left: 10px;
+}
+
+
+.prod_plus{
+
+color:green;
+margin: 7px;
+
+}
+
+.prod_minus{
+    color :green;
+    
+}
+.prod_cancel{
+    color: red;
+    margin-left: 10px;
+}
+
+.prod_cancel:hover{
+    box-shadow: 1px 1px 12px #555;
+
+}
+
+.prod_plus:hover{
+    box-shadow: 1px 1px 12px #555;
+
+}
+
+.prod_minus:hover{
+    box-shadow: 1px 1px 12px #555;
+
+}
+
+
+
+.title3{
+
+    display: flex;
+    width: 80%;
+    height: 20%;
+    flex-direction: center; 
+    align-items: center;
+    justify-content: center;
+    background-color: #DDA0DD;
+    color :white;
+    font-size: 140%;
+    text-transform: uppercase;
+    margin-top: 20px;
+
+
+      
+}
+
+.title3:hover{
+    box-shadow: 1px 1px 12px #555;
+}
+
+
+.product2{
+    
+    margin-top: 100px;
+    display: flex;
+    
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items:center;
+    width:250px;
+    height:260px;
+    margin-left: 70px;
+    margin-bottom: 60px;
+    
+
+}
+
+.product2:hover{
+     box-shadow: 1px 1px 12px #555;
+}

@@ -62,7 +62,7 @@
                 <div class="form-control">
                     <label for="email">E-mail</label><span class="obligatoire">*</span>
                     <input type="text" name="email" id="email" />
-                    <p>The e-mail address will not be made public and will not be used only for the reception of a new password or for the reception of certain wished notifications.</p>
+                    <p>The e-mail address will not be made public and will not be used only for the reception of a new password or for the reception of certain wished notifications.P</p>
             
                 </div>
 

@@ -14,13 +14,14 @@ select {
 	font-family: Garamond ;
 }
 
+/*
 #container {
 	margin-top: 25%;
 	position: absolute;
 	left :25em;
 	top : -15em;
 	
-}
+}*
 
 #container2 {
 	margin-top: 25%;
@@ -28,7 +29,7 @@ select {
 	left :50em;
 	top : -15em;
 	
-}
+}*/
 
 
 .product{
@@ -39,7 +40,7 @@ select {
 	flex-direction: column;
 	justify-content:flex-start;
     align-items:center;
-    width:200px;
+    width:250px;
     height:300px;
     
 }
@@ -63,10 +64,6 @@ select {
 	display: flex;
 }
 
-.product .add_sup .product_number {
-	margin-right: 30px;
-	margin-left: 10px;
-}
 
 .product .title{
 
@@ -83,19 +80,19 @@ select {
 .product .description{
 
 	display: flex;
-	color : #6A1B9A;
+	color : #424242;
 	font-family: lucida;
 	justify-content:center;
     align-items: center;
     margin-bottom: 30px;
     font-size: 13px;
-    font-weight: bold;
     font-family: Arial, serif;
 }
 
 .product .prix{
 
 	display: flex;
+	color :#6A1B9A;
 	justify-content:center;
     align-items: center;
     margin-bottom: 30px;
@@ -104,3 +101,22 @@ select {
     font-family: Arial, serif;
 }
 
+.button{
+	background-color: green;
+	border-right-style:groove;
+
+}
+
+.command{
+	font-family: Verdana, Geneva, sans-serif;
+
+
+}
+
+
+.product_number{
+	text-align: center;
+	padding-left: 10px;
+	padding-right: 10px;
+
+}

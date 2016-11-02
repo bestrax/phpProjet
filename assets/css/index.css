@@ -46,5 +46,6 @@
 #map {
     width: 60vw;
     height: 60vw;
-    max-height: 60vh
+    max-height: 60vh;
+    margin-bottom: 30px;
 }

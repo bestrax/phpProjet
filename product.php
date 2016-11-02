@@ -30,7 +30,7 @@
 		<div class="row" id="order-process">
 
 			<div class="process">
-				<div class="step active">Where and When ?</div>
+				<div class="step">Where and When ?</div>
 				<div class="step active">Selection</div>
 				<div class="step">Validation</div>
 			</div>
@@ -42,87 +42,121 @@
 
 	<div id="container">
 
-		<div class="content">
+		<div class="content-categorie">
 			<div class="categorie active">Breakfast</div>
 			<div class="categorie">Healthy Breakfast</div>
 			<div class="categorie">Gluten fre breakfast</div>
 		</div>
 
-		<div class="full">
-			 <div class="product">
-				<a class="title">Croissant</a>
-				<img src="croissant.jpg" alt="croissant" />
-				<a class="description">Croissant saveur de France ...</a>
-				<a class="prix">1€</a>
+		<div class="row margin-top-row">
 
-				<div class="add_sup">
-					<div class="command">
-						<a class="product_minus">-</a>
-						<div class="product_number">1</div>
-						<a class="product_plus">+</a>
+			<div class="full">
+				 <div class="product">
+					<a class="title">Croissant</a>
+					<img src="croissant.jpg" alt="croissant" />
+					<a class="description">Croissant saveur de France ...</a>
+					<a class="prix">1€</a>
+
+					<div class="add_sup">
+						<div class="command">
+							<a class="product_minus">-</a>
+							<div class="product_number">1</div>
+							<a class="product_plus">+</a>
+						</div>
+
+						<div >
+							<a class="button">ADD</a>
+						</div>
 					</div>
 
-					<div >
-						<a class="button">ADD</a>
+				</div>
+
+				<div class="product">
+					<a class="title">Pain</a>
+					<img src="croissant.jpg" alt="croissant" />
+					<a class="description">Croissant saveur de France ...</a>
+					<a class="prix">1€</a>
+
+					<div class="add_sup">
+						<div class="command">
+							<a class="product_minus">-</a>
+							<div class="product_number">1</div>
+							<a class="product_plus">+</a>
+						</div>
+
+						<div >
+							<a class="button">ADD</a>
+						</div>
 					</div>
+
+				</div>
+
+				 <div class="product">
+					<a class="title">Croissant</a>
+					<img src="croissant.jpg" alt="croissant" />
+					<a class="description">Croissant saveur de France ...</a>
+					<a class="prix">1€</a>
+
+					<div class="add_sup">
+						<div class="command">
+							<a class="product_minus">-</a>
+							<div class="product_number">1</div>
+							<a class="product_plus">+</a>
+						</div>
+
+						<div >
+							<a class="button">ADD</a>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="product">
+					<a class="title">Croissant</a>
+					<img src="croissant.jpg" alt="croissant" />
+					<a class="description">Croissant saveur de France ...</a>
+					<a class="prix">1€</a>
+
+					<div class="add_sup">
+						<div class="command">
+							<a class="product_minus">-</a>
+							<div class="product_number">1</div>
+							<a class="product_plus">+</a>
+						</div>
+
+						<div >
+							<a class="button">ADD</a>
+						</div>
+					</div>
+
 				</div>
 
 			</div>
 
-			<div class="product">
-				<a class="title">Pain</a>
-				<img src="croissant.jpg" alt="croissant" />
-				<a class="description">Croissant saveur de France ...</a>
-				<a class="prix">1€</a>
-
-				<div class="add_sup">
-					<div class="command">
-						<a class="product_minus">-</a>
-						<div class="product_number">1</div>
-						<a class="product_plus">+</a>
-					</div>
-
-					<div >
-						<a class="button">ADD</a>
-					</div>
+			<div class="right-cart">
+				<a class="top"><i class="fa fa-shopping-cart" aria-hidden="true">&nbsp &nbsp</i>cart</a>
+				<div class="button button_order"><a href="cart.php" class="no-link">Validate your order</a></div>
+				<div class="text_pickup">
+					Pick-up : 11AM
 				</div>
-
-			</div>
-
-			 <div class="product">
-				<a class="title">Croissant</a>
-				<img src="croissant.jpg" alt="croissant" />
-				<a class="description">Croissant saveur de France ...</a>
-				<a class="prix">1€</a>
-
-				<div class="add_sup">
-					<div class="command">
-						<a class="product_minus">-</a>
-						<div class="product_number">1</div>
-						<a class="product_plus">+</a>
-					</div>
-
-					<div >
-						<a class="button">ADD</a>
-					</div>
-				</div>
-
-			</div>
-
-			<div class="product2">
-				<a class="title2"><i class="fa fa-shopping-cart" aria-hidden="true">&nbsp &nbsp</i>cart</a>
-				<div class="button button_order">Order</div>
 				<div class="text_resume">
-					<a class="nb_product">1×3 croissants 3,00 €</a>
-					<a class="prod_plus">+</a>
-					<a class="prod_minus">-</a>
-					<a class="prod_cancel">×</a>
+					<table>
+						<tbody>
+							<tr>
+								<td class="nb_product">1×3 croissants 3,00 €</td>
+								<td class="prod_plus"><i class="fa fa-plus" aria-hidden="true"></td>
+								<td class="prod_minus"><i class="fa fa-minus" aria-hidden="true"></td>
+								<td class="prod_cancel"><i class="fa fa-times" aria-hidden="true"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<a class="bottom">Total $10</a>
 
 				</div>
-				 <a class="title3">Total TTC</a>
-			</div>
 
 		</div>
+
 	</div>
 
  	<footer id="footer">

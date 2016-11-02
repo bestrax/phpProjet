@@ -58,7 +58,7 @@
                 </select>
                 <span class="fa fa-chevron-down select-down" aria-hidden="true"></span>
 
-                <a href="product.php" class="button btn-lg no-link">Select product <i class="fa fa-arrow-right"></i></a>
+                <a href="product.php" class="button btn-lg no-link select-product">Select product <i class="fa fa-arrow-right"></i></a>
             </div>
         </div>
 

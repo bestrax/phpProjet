@@ -20,7 +20,7 @@
 
 .select-down {
     position: relative;
-    left: -30px
+    left: -30px;
 }
 
 .info {
@@ -48,4 +48,8 @@
     height: 60vw;
     max-height: 60vh;
     margin-bottom: 30px;
+}
+
+.select-product {
+    display: inline-block;
 }

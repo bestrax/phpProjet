@@ -255,7 +255,7 @@
     box-shadow: 1px 1px 6px #DDA0DD;
 }
 
-.row {
+.margin-top-row {
     width: 100%;
     display: flex;
     flex-direction: row;

@@ -28,7 +28,7 @@ if($validation && !empty($_POST['first_name']) && !empty($_POST['last_name']) &&
         if(!preg_match($regex, $_POST['mail']))
             $errorMsg = 'You need to enter a valid e-mail adress';
         else {
-            require_once 'assets/php/bdd.php';
+            require_once 'assets/php/config/bdd.php';
 
             $req = $bdd->prepare('SELECT COUNT(*) FROM `user` WHERE mail LIKE :mail OR username LIKE :username');
 
@@ -68,7 +68,7 @@ if($validation && !empty($_POST['first_name']) && !empty($_POST['last_name']) &&
 
 
 <?php
-    include 'assets/php/header.php';
+    include 'assets/php/partials/header.php';
     pageHeader('', ['register', 'login'], 1);
 ?>
 
@@ -134,5 +134,5 @@ if($validation && !empty($_POST['first_name']) && !empty($_POST['last_name']) &&
 </div>
 
 <?php
-    include 'assets/php/footer.php';
+    include 'assets/php/partials/footer.php';
 ?>

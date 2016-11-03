@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include 'assets/php/header.php';
+    include 'assets/php/partials/header.php';
     pageHeader('', ['index'], 1);
 ?>
 
@@ -41,5 +41,5 @@
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnJ23ZmykJ3XTHmXqQWYiRuKqhV0LyBDI&callback=initMap"></script>
 
 <?php
-    include 'assets/php/footer.php';
+    include 'assets/php/partials/footer.php';
 ?>

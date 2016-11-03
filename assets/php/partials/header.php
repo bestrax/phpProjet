@@ -43,7 +43,7 @@
                         ?>
 
                         <div>
-                            <a href="resume.php" class="no-link"><i class="fa fa-user" aria-hidden="true"></i>Account</a>
+                            <a href="profile.php" class="no-link"><i class="fa fa-user" aria-hidden="true"></i>Account</a>
                         </div>
                         <div>
                             <a href="logout.php" class="no-link"><i class="fa fa-sign-out" aria-hidden="true"></i>Log out</a>

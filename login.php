@@ -9,7 +9,7 @@ if(!empty($_SESSION['user_id']))
 
 if(!empty($_POST['username']) && !empty($_POST['password'])) {
 
-    require_once 'assets/php/bdd.php';
+    require_once 'assets/php/config/bdd.php';
 
     $req = $bdd->prepare('SELECT `id` FROM `user` WHERE username LIKE :username OR password LIKE :password');
 
@@ -29,7 +29,7 @@ if(!empty($_POST['username']) && !empty($_POST['password'])) {
 
 
 <?php
-    include 'assets/php/header.php';
+    include 'assets/php/partials/header.php';
     pageHeader('', ['login'], 1);
 ?>
 
@@ -93,5 +93,5 @@ if(!empty($_POST['username']) && !empty($_POST['password'])) {
 </div>
 
 <?php
-    include 'assets/php/footer.php';
+    include 'assets/php/partials/footer.php';
 ?>

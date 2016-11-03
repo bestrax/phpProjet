@@ -1,24 +1,12 @@
 <?php
+    session_start();
 
-    if( empty($_POST['fname']) || empty($_POST['lname']) || empty($_POST['email'])
-        || empty($_POST['username']) || empty($_POST['password']) || empty($_POST['password-confirmation']))
+    if(!isset($_SESSION['register_confirmation']) || $_SESSION['register_confirmation'] != true)
+        header('Location: login.php');
 
-        return header('Location: register.php?error=true');
-
-    require_once 'assets/php/bdd.php';
-
-    $req = $bdd->prepare('INSERT INTO `user` (username, password, mail, first_name, last_name) VALUES (:username, :password, :mail, :first_name, :last_name)');
-
-    $req->execute(array(':username' => $_POST['username'],
-        ':password' => $_POST['password'],
-        ':mail' => $_POST['mail'],
-        ':first_name' => $_POST['first_name'],
-        ':last_name' => $_POST['last_name']));
-
-
+    $_SESSION['register_confirmation'] = false;
 
 ?>
-
 <html>
 
 <head>

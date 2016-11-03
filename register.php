@@ -2,7 +2,7 @@
 
 <head>
     <title>Bread Express</title>
-     <link rel="stylesheet" type="text/css" href="assets/css/register.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/register.css">
     <link rel="stylesheet" type="text/css" href="assets/css/master.css">
     <link rel="stylesheet" type="text/css" href="assets/css/login.css">
     <link rel="stylesheet" href="assets/lib/css/font-awesome.min.css">
@@ -43,7 +43,7 @@
     <div id="login">
 
         <div class="head">
-            INSCRIPTION 
+            Registration
         </div>
 
         <div class="content">
@@ -67,8 +67,8 @@
                 </div>
 
                 <div class="form-control">
-                    <label for="id">User name</label><span class="obligatoire">*</span>
-                    <input type="text" name="id" id="id" />
+                    <label for="username">User name</label><span class="obligatoire">*</span>
+                    <input type="text" name="username" id="username" />
                 </div>
 
                 <div class="form-control">
@@ -77,8 +77,8 @@
                 </div>
 
                  <div class="form-control">
-                    <label for="password"> Retry Password</label><span class="obligatoire">*</span>
-                    <input type="text" name="password" id="password" />
+                    <label for="password-confirmation"> Retry Password</label><span class="obligatoire">*</span>
+                    <input type="text" name="password-confirmation" id="password-confirmation" />
                 </div>
                 <div class="form-submit">
                     <a type="submit" class="button btn-lg">Register <i class="fa fa-arrow-right"></i></a>

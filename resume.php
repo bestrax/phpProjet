@@ -4,7 +4,7 @@
 
 	 <title>Bread Express</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/master.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/order.css">
+
     <link rel="stylesheet" href="assets/lib/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=ABeeZee" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/product.css">
@@ -52,17 +52,40 @@
     <div id="login">
     <div class="file">
 
-        <div class="head">Emilie Jolie</div>
-        <div class="vroum">   
-            <div class="name">resumé of your order :</div><br/>
-            <div class="liste_product"> 1 croissant : 3€</div>
-            <div class="head">Modifier mon profil</div>
+        <div class="title">Emilie Jolie</div>
+
+       
+            <div class="name">Order History :</div><br/>
+            <table>
+            <tr class="name-order">
+                    <td >Command of 17/09 at 16pm :</td>
+                    <td></td>   
+                    <td class="price" > 
+                        <span>$4</span>  
+                    </td>       
+            </tr>
+            <tr class="list-order">
+                    <td>Croissant</td> 
+                    <td > Qte:3</td>
+                    <td class="price"> $3</td>
+                         
+            </tr>   
+            <tr class="list-order">    
+                    <td> Bread </td> 
+                    <td > Qte:1</td>
+                    <td class="price"> $1</td>
+                    
+            </tr>  
+
+            </table>
+              <br>
+            <div class="titre">Modify Profil</div>
             <br>
-            <div class="head">Deconnexion</div>
+            <div class="titre">Log out</div>
 
-         </div>
+         
     </div>
-
+</div>
    
 </div>
 

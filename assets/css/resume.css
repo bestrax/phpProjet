@@ -1,4 +1,24 @@
+#container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
 
+#resume {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 33vw;
+    margin : 5vh;
+    border-radius: 3px;
+    box-shadow: 0 1px 4px #ccc;
+    border: 1px solid #fff;
+    padding: 20px;
+    padding-bottom: 0;
+}
 
 .title{
     background-color: #6A1B9A;
@@ -19,6 +39,7 @@
     background-color: #6A1B9A;
     width: 60%;
     padding: 20px;
+    margin-bottom: 20px;
     font-size: large;
     font-weight: bold;
     text-transform: uppercase;
@@ -30,9 +51,14 @@
     text-align: center;
 }
 
+@media(max-width: 767px) {
+    .titre {
+        width: calc(100% - 40px);
+    }
+}
+
 
 .name{
-
     background-color: white;
     width: calc(100% - 40px);
     padding: 20px;
@@ -48,7 +74,6 @@
     margin-right: 30px;
 }
 
-
 .name .list_product{
     display: flex;
     flex-direction: column;
@@ -60,25 +85,6 @@
     text-transform: uppercase;
     color : white;
      justify-content: center;
-}
-.file{
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 20px;
-    padding-bottom: 0;
-   justify-content: center;
-  
-}
-.vroum
-{
-      
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-   
-
 }
 
 .head:hover{
@@ -92,15 +98,15 @@
     box-shadow: 1px 1px 12px #DDA0DD;
 }
 
+table {
+    margin-bottom: 20px;
+}
 
 table, tr, th {
     border-collapse: collapse;
-    border: 0,4px solid black;
     width: 100%;
     text-align: left;
-    padding: 5px;
-    padding-left: 10px
-
+    padding: 5px 5px 5px 10px;
 }
 
 td {
@@ -108,19 +114,19 @@ td {
 }
 
 .name-order {
-    background-color: #99e699;
-    border-bottom :1px solid black;
-
-
+    background-color: #EC407A;
 }
 
 .list-order {
-    background-color: #ff6666;
+    background-color: #F3E5F5;
     background-size: 80%;
+}
 
+.list-order td:first-child {
+    padding-left: 10%;
 }
 
 .price {
-    text-align: right
+    text-align: right;
     padding-right: 20px;
 }

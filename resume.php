@@ -2,15 +2,12 @@
 
 <head>
 
-	 <title>Bread Express</title>
+    <title>Bread Express</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/master.css">
 
     <link rel="stylesheet" href="assets/lib/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=ABeeZee" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="assets/css/product.css">
     <link rel="stylesheet" type="text/css" href="assets/css/resume.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/login.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/register.css">
 
 
 </head>
@@ -34,8 +31,8 @@
     <div class="row" id="order-process">
 
         <div class="process">
-            <div class="step active">Where and When ?</div>
-            <div class="step active">Selection</div>
+            <div class="step">Where and When ?</div>
+            <div class="step">Selection</div>
             <div class="step">Validation</div>
         </div>
 
@@ -44,58 +41,48 @@
 
 </nav>
 
-
-<body>
-
 <div id="container">
 
-    <div id="login">
-    <div class="file">
+    <div id="resume">
 
         <div class="title">Emilie Jolie</div>
 
-       
-            <div class="name">Order History :</div><br/>
-            <table>
+
+        <div class="name">Order History :</div><br/>
+        <table>
             <tr class="name-order">
-                    <td >Command of 17/09 at 16pm :</td>
-                    <td></td>   
-                    <td class="price" > 
-                        <span>$4</span>  
-                    </td>       
+                <td>Command of 17/09 at 16pm :</td>
+                <td></td>
+                <td class="price">$4</td>
+            </tr>
+
+            <tr class="list-order">
+                <td>Croissant</td>
+                <td>Qte:3</td>
+                <td class="price">$3</td>
             </tr>
             <tr class="list-order">
-                    <td>Croissant</td> 
-                    <td > Qte:3</td>
-                    <td class="price"> $3</td>
-                         
-            </tr>   
-            <tr class="list-order">    
-                    <td> Bread </td> 
-                    <td > Qte:1</td>
-                    <td class="price"> $1</td>
-                    
-            </tr>  
+                <td>Bread </td>
+                <td>Qte:1</td>
+                <td class="price">$1</td>
+            </tr>
 
-            </table>
-              <br>
-            <div class="titre">Modify Profil</div>
-            <br>
-            <div class="titre">Log out</div>
+        </table>
 
-         
+        <div class="titre">Modify Profil</div>
+        <div class="titre">Log out</div>
+
     </div>
-</div>
    
 </div>
 
+<footer id="footer">
+    <div class="row">
+        <p>Bread express is a trademak brand. We want to make your life easier tasty too !</p>
+    </div>
+</footer>
 
 </body>
- <footer id="footer">
-        <div class="row">
-            <p>Bread express is a trademak brand. We want to make your life easier tasty too !</p>
-        </div>
-    </footer>
 
 </html>
 

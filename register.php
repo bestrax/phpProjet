@@ -4,8 +4,11 @@ session_start();
 
 $errorMsg = '';
 
-if( !empty($_POST['first_name']) || !empty($_POST['last_name']) || !empty($_POST['mail'])
-    || !empty($_POST['username']) || !empty($_POST['password']) || !empty($_POST['password-confirmation']))
+if(!empty($_SESSION['user_id']))
+    header('Location: index.php');
+
+if( !isset($_POST['from_login']) && (!empty($_POST['first_name']) || !empty($_POST['last_name']) || !empty($_POST['mail'])
+    || !empty($_POST['username']) || !empty($_POST['password']) || !empty($_POST['password-confirmation'])))
 
     $validation = true;
 else

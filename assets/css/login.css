@@ -81,3 +81,11 @@ label {
 .form-submit .button {
     margin-top: 20px;
 }
+
+.error-message {
+    text-align: center;
+    font-size: medium;
+    margin: 0;
+    margin-bottom: 20px;
+    color: red;
+}

@@ -43,7 +43,7 @@
             <i class="fa fa-clock-o type" aria-hidden="true"></i>
             <div>
                 <label for="hour"> When do you want to pick-up ? : </label>
-                <select name="hour" id="hour-selector">
+                <select name="hour" id="hour-selector" title="hour">
                     <option value="9h">9PM</option>
                     <option value="9h15">10PM</option>
                     <option value="9h30">11PM</option>

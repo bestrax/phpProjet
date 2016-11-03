@@ -1,5 +1,22 @@
 <?php
     session_start();
+    require_once 'assets/php/config/bdd.php';
+
+    $req = $bdd->prepare('SELECT `username`, `mail`, `first_name`, `last_name` FROM `user` WHERE id = :id');
+
+    $req->execute(array(':id' => $_SESSION['user_id']));
+    $data = [];
+
+    if($result = $req->fetch()) {
+        $data = $result;
+    }
+    else {
+        session_destroy();
+        header('Location: login.php');
+    }
+?>
+
+<?php
     include 'assets/php/partials/header.php';
     pageHeader('', ['profile'], 0);
 ?>
@@ -8,7 +25,7 @@
 
     <div id="resume">
 
-        <div class="title">Emilie Jolie</div>
+        <div class="title"><p><?php echo $data['last_name'].' '.$data['first_name']; ?></p></div>
 
 
         <div class="name">Order History :</div><br/>
@@ -33,7 +50,7 @@
         </table>
 
         <div class="titre"><a href="modify_profile.php" class="no-link">Modify Profil</a></div>
-        <div class="titre">Log out</div>
+        <div class="titre"><a href="logout.php" class="no-link">Log out</a></div>
 
     </div>
    

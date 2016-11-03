@@ -1,5 +1,9 @@
 <?php
     session_start();
+
+    if(empty($_SESSION['user_id']))
+        header('Location: login.php');
+
     require_once 'assets/php/config/bdd.php';
 
     $req = $bdd->prepare('SELECT `username`, `mail`, `first_name`, `last_name` FROM `user` WHERE id = :id');

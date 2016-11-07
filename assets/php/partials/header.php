@@ -1,6 +1,28 @@
 <?php
+
     function pageHeader($name, $css, $active)
     {
+
+        $admin = false;
+
+        if(isset($_SESSION['user_id'])) {
+
+            require dirname(dirname(__FILE__)).'/config/bdd.php';
+
+            $req = $bdd->prepare('SELECT `id` FROM `user` WHERE id = :id AND level >= 2');
+
+            $req->execute(array(':id' => $_SESSION['user_id']));
+
+            if($result = $req->fetch()) {
+                $admin = true;
+            }
+        }
+
+        $path = '';
+
+        if(preg_match('/.*admin.*/iD', $_SERVER['REQUEST_URI']))
+            $path = '../';
+
         ?>
         <html>
 
@@ -23,7 +45,7 @@
 
             <div class="row menu">
                 <div class="logo">
-                    <a href="index.php"><img src="assets/img/logodemi.jpg"/></a>
+                    <a href="<?php echo $path; ?>index.php"><img src="assets/img/logodemi.jpg"/></a>
                 </div>
 
                 <div class="user">
@@ -32,10 +54,10 @@
                         ?>
 
                         <div>
-                            <a href="login.php" class="no-link"><i class="fa fa-user" aria-hidden="true"></i>Sign in</a>
+                            <a href="<?php echo $path; ?>login.php" class="no-link"><i class="fa fa-user" aria-hidden="true"></i>Sign in</a>
                         </div>
                         <div>
-                            <a href="register.php" class="no-link"><i class="fa fa-edit" aria-hidden="true"></i>Register</a>
+                            <a href="<?php echo $path; ?>register.php" class="no-link"><i class="fa fa-edit" aria-hidden="true"></i>Register</a>
                         </div>
 
                         <?php
@@ -43,10 +65,13 @@
                         ?>
 
                         <div>
-                            <a href="profile.php" class="no-link"><i class="fa fa-user" aria-hidden="true"></i>Account</a>
+                            <a href="<?php echo $path; ?>profile.php" class="no-link"><i class="fa fa-user" aria-hidden="true"></i>Account</a>
                         </div>
+
+                        <?php echo $admin?'<div><a href="'.$path.'admin/" class="no-link"><i class="fa fa-lock" aria-hidden="true"></i>Admin</a></div>':'' ?>
+
                         <div>
-                            <a href="logout.php" class="no-link"><i class="fa fa-sign-out" aria-hidden="true"></i>Log out</a>
+                            <a href="<?php echo $path; ?>logout.php" class="no-link"><i class="fa fa-sign-out" aria-hidden="true"></i>Log out</a>
                         </div>
 
                         <?php
@@ -54,7 +79,7 @@
 
                 </div>
 
-                <div class="cart"><a href="cart.php" class="no-link"><i class="fa fa-shopping-cart"
+                <div class="cart"><a href="<?php echo $path; ?>cart.php" class="no-link"><i class="fa fa-shopping-cart"
                                                                         aria-hidden="true"></i>Cart</a></div>
             </div>
 

@@ -18,7 +18,12 @@ if(!empty($_POST['username']) && !empty($_POST['password'])) {
 
     if($result = $req->fetch()) {
         $_SESSION['user_id'] = $result['id'];
-        header('Location: index.php');
+
+        //If the user was confirming its order
+        if(isset($_GET['cart']))
+            header('Location: cart.php');
+        else
+            header('Location: index.php');
     }
     else
         $errorMsg = 'User or Passowrd is incorrect !';
@@ -43,7 +48,7 @@ if(!empty($_POST['username']) && !empty($_POST['password'])) {
         </div>
 
         <div class="content">
-            <form method="post" action="login.php">
+            <form method="post" action="login.php<?php echo isset($_GET['cart']) ? '?cart=true' : ''; ?>">
 
                 <?php echo !empty($errorMsg)?'<p class="error-message">'.$errorMsg.'</p>':''; ?>
 

@@ -65,7 +65,8 @@
         <div class="info">
             <i class="fa fa-info-circle type" aria-hidden="true"></i>
             <p>Your cart is ready to be validate. Please verify the items that are inside your cart, when you want to pick-up.
-                When you're ready click on validate to be redirected to pay. </p>
+                When you're ready click on validate to be redirected to pay. <br/><br/>
+                Pick-up time : <?php echo $cartInfo['pickup']; ?></p>
         </div>
 
         <div class="previous">
@@ -116,7 +117,7 @@
         </table>
 
         <div class="validate">
-            <a type="submit" class="button btn-lg">Validate</a>
+            <a href="confirmation.php" class="button btn-lg no-link">Validate</a>
         </div>
 
     </div>

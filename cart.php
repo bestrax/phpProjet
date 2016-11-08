@@ -1,41 +1,62 @@
-<html>
+<?php
+    session_start();
 
-<head>
-    <title>Bread Express</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/master.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/cart.css">
-    <link rel="stylesheet" href="assets/lib/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=ABeeZee" rel="stylesheet">
-</head>
+    require_once 'assets/php/config/bdd.php';
 
-<body>
+    $cart = array();
+    $cartInfo = array('pickup' => 0, 'total' => 0);
 
-<nav id="navbar">
 
-    <div class="row menu">
-        <div class="logo">
-            <a href="index.php"><img src="assets/img/logodemi.jpg" /></a>
-        </div>
+    //To manage the pickup
 
-        <div class="user">
-            <div><a href="login.php" class="no-link"><i class="fa fa-user" aria-hidden="true"></i>Sign in</a></div>
-            <div><a href="register.php" class="no-link"><i class="fa fa-edit" aria-hidden="true"></i>Register</a></div>
-        </div>
+    if (empty($_SESSION['cartPickup']))
+        header('Location: index.php');
 
-        <div class="cart"><a href="cart.php" class="no-link"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</a></div>
-    </div>
+    $cartInfo['pickup'] = $_SESSION['cartPickup'];
 
-    <div class="row" id="order-process">
 
-        <div class="process">
-            <div class="step">Where and When ?</div>
-            <div class="step">Selection</div>
-            <div class="step active">Validation</div>
-        </div>
+    // To modify item in the cart
+    if (!empty($_POST['modify'])) {
 
-    </div>
+        foreach ($_SESSION['cart'] as $i => $item) {
+            if ($item['id'] == $_POST['modify']) {
+                if (isset($_POST['plus']))
+                    $_SESSION['cart'][$i]['quantity']++;
+                else if (isset($_POST['minus']))
+                    $_SESSION['cart'][$i]['quantity']--;
 
-</nav>
+                if (isset($_POST['remove']) || $_SESSION['cart'][$i]['quantity'] <= 0)
+                    array_splice($_SESSION['cart'], $i, 1);
+                break;
+            }
+        }
+
+    }
+
+    //To show the cart
+
+    if (isset($_SESSION['cart'])) {
+
+        foreach ($_SESSION['cart'] as $item) {
+            $req = $bdd->prepare('SELECT id, name, price FROM product WHERE id=:id');
+            $req->execute(array(':id' => $item['id']));
+            $value = $req->fetch();
+            $cart[] = array('item' => $value, 'quantity' => $item['quantity']);
+            $cartInfo['total'] += $item['quantity'] * $value['price'];
+        }
+
+    }
+
+    //In the case the cart is empty
+    if (!isset($_SESSION['cart']) || count($_SESSION['cart']) == 0)
+        header('Location: product.php');
+
+?>
+
+<?php
+    include 'assets/php/partials/header.php';
+    pageHeader('', ['cart'], 3);
+?>
 
 <div id="container">
 
@@ -61,32 +82,34 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Bread</td>
-                    <td>
-                        <i class="fa fa-minus" aria-hidden="true"></i>
-                        <span class="quantity">4</span>
-                        <i class="fa fa-plus" aria-hidden="true"></i>
-                    </td>
-                    <td>$2.40</td>
-                    <td><i class="fa fa-times color-red" aria-hidden="true"></i></td>
-                </tr>
-                <tr>
-                    <td>Croissant</td>
-                    <td>
-                        <i class="fa fa-minus" aria-hidden="true"></i>
-                        <span class="quantity">4</span>
-                        <i class="fa fa-plus" aria-hidden="true"></i>
-                    </td>
-                    <td>$0.60</td>
-                    <td><i class="fa fa-times color-red" aria-hidden="true"></i></td>
-                </tr>
+
+                <?php
+                    foreach ($cart as $item) {
+                        ?>
+                        <tr>
+                            <form action="cart.php" method="post">
+                                <input type="hidden" name="modify" value="<?php echo $item['item']['id']; ?>"/>
+
+                                <td><?php echo $item['item']['name']; ?></td>
+                                <td>
+                                    <button type="submit" name="minus"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                                    <span class="quantity"><?php echo $item['quantity']; ?></span>
+                                    <button type="submit" name="plus"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                                </td>
+                                <td>$<?php echo $item['item']['price']*$item['quantity']; ?></td>
+                                <td> <button type="submit" name="remove"><i class="fa fa-times color-red" aria-hidden="true"></i></button></td>
+                            </form>
+                        </tr>
+                        <?php
+                    }
+                ?>
+
             </tbody>
             <tfoot>
                 <tr>
                     <td></td>
                     <td></td>
-                    <td>Total $3.00</td>
+                    <td>Total $<?php echo $cartInfo['total']; ?></td>
                     <td></td>
                 </tr>
             </tfoot>
@@ -100,12 +123,6 @@
 
 </div>
 
-<footer id="footer">
-    <div class="row">
-        <p>Bread express is a trademak brand. We want to make your life easier tasty too !</p>
-    </div>
-</footer>
-
-</body>
-
-</html>
+<?php
+    include 'assets/php/partials/footer.php';
+?>

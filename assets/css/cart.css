@@ -58,7 +58,15 @@
     color: #F44336;
 }
 
-.summary .fa-minus, .summary .fa-plus {
+.summary button {
+    border: 0;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    font-size: small;
+}
+
+.summary .fa-minus .fa, .summary .fa-plus .fa {
     font-size: small;
 }
 

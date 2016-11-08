@@ -33,6 +33,7 @@
 
 .product .add_sup .command {
     display: flex;
+    justify-content: center;
 }
 
 
@@ -156,6 +157,13 @@
     border-bottom: 1px solid #BDBDBD;
 }
 
+.text_empty {
+    display:block ;
+    width: 80%;
+    font-size: small;
+    text-align: center;
+}
+
 
 .text_resume {
     display:block ;
@@ -175,21 +183,37 @@
     margin-bottom: 20px;
 }
 
-.button {
-    margin-left: 10px;
+.prod_plus button {
+    border: 0;
+    background: transparent;
+    padding: 0;
+    margin: 0;
 }
 
+.prod_minus button {
+    border: 0;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+}
 
-.prod_plus {
+.prod_cancel button {
+    border: 0;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+.prod_plus .fa {
     color: green;
     margin: 7px;
 }
 
-.prod_minus {
+.prod_minus .fa {
     color :green;
 }
 
-.prod_cancel {
+.prod_cancel .fa {
     color: red;
     margin-left: 10px;
 }

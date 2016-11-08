@@ -53,3 +53,7 @@
 .select-product {
     display: inline-block;
 }
+
+form {
+    margin: 0;
+}

@@ -9,23 +9,25 @@
     <div class="info">
         <i class="fa fa-clock-o type" aria-hidden="true"></i>
         <div>
-            <label for="hour"> When do you want to pick-up ? : </label>
-            <select name="hour" id="hour-selector" title="hour">
-                <option value="9h">9PM</option>
-                <option value="9h15">10PM</option>
-                <option value="9h30">11PM</option>
-                <option value="9h45">12PM</option>
-                <option value="9h">1AM</option>
-                <option value="9h15">2AM</option>
-                <option value="9h30">3AM</option>
-                <option value="9h45">4AM</option>
-                <option value="9h15">5AM</option>
-                <option value="9h30">6AM</option>
-                <option value="9h45">7AM</option>
-            </select>
-            <span class="fa fa-chevron-down select-down" aria-hidden="true"></span>
+            <form action="product.php" method="post">
+                <label for="pickup"> When do you want to pick-up ? : </label>
+                <select name="pickup" id="hour-selector" title="hour">
+                    <option value="9PM">9PM</option>
+                    <option value="10PM">10PM</option>
+                    <option value="11PM">11PM</option>
+                    <option value="12PM">12PM</option>
+                    <option value="1AM">1AM</option>
+                    <option value="2AM">2AM</option>
+                    <option value="3AM">3AM</option>
+                    <option value="4AM">4AM</option>
+                    <option value="5AM">5AM</option>
+                    <option value="6AM">6AM</option>
+                    <option value="7AM">7AM</option>
+                </select>
+                <span class="fa fa-chevron-down select-down" aria-hidden="true"></span>
 
-            <a href="product.php" class="button btn-lg no-link select-product">Select product <i class="fa fa-arrow-right"></i></a>
+                <button type="submit" href="product.php" class="button btn-lg no-link select-product">Select product <i class="fa fa-arrow-right"></i></button>
+            </form>
         </div>
     </div>
 

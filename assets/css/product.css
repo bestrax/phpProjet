@@ -268,3 +268,13 @@
         margin-top: 50px;
     }
 }
+
+.image-product {
+    width: 15vw;
+}
+
+@media(max-width: 767px) {
+    .image-product {
+        width: 70vw;
+    }
+}

@@ -46,9 +46,9 @@
 					?>
 					<div class="product">
 						<a class="title"><?php echo $product['name']; ?></a>
-						<img src="croissant.jpg" alt="croissant" />
+						<img src="assets/uploads/<?php echo $product['image']; ?>" class="image-product" />
 						<a class="description"><?php echo $product['description']; ?></a>
-						<a class="prix"><?php echo $product['price']; ?></a>
+						<a class="prix"><?php echo $product['price']; ?> €</a>
 
 						<div class="add_sup">
 							<div class="command">

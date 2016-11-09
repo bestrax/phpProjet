@@ -93,7 +93,7 @@ else if(!$validation) {
     <div id="login">
 
         <div class="head">
-            Registration
+            EDIT PROFILE
         </div>
 
         <div class="content">
@@ -133,7 +133,7 @@ else if(!$validation) {
                 </div>
 
                 <div class="form-submit">
-                    <button type="submit" class="button btn-lg">Register <i class="fa fa-arrow-right"></i></button>
+                    <button type="submit" class="button btn-lg">Edit <i class="fa fa-arrow-right"></i></button>
                 </div>
 
             </form>

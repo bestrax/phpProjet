@@ -75,6 +75,24 @@
 
     <div id="admin">
 
+        <div class="admin-menu">
+            <div>
+                <a href="index.php" class="no-link">
+                    <i class="fa fa-cog"></i> Categories/Products
+                </a>
+            </div>
+            <div>
+                <a href="order.php" class="no-link">
+                    <i class="fa fa-coffee"></i> Orders
+                </a>
+            </div>
+            <div>
+                <a href="users.php" class="no-link">
+                    <i class="fa fa-user"></i> Users
+                </a>
+            </div>
+        </div>
+
         <table>
             <thead>
                 <tr>

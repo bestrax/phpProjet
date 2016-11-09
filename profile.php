@@ -10,9 +10,27 @@
 
     $req->execute(array(':id' => $_SESSION['user_id']));
     $data = [];
+    $orders = [];
 
     if($result = $req->fetch()) {
         $data = $result;
+
+        $req = $bdd->prepare('SELECT * FROM `order` WHERE user_id=:user_id');
+        $req->execute(array(':user_id' => $_SESSION['user_id']));
+
+        $orders = $req->fetchAll();
+
+        foreach ($orders as $i => $order) {
+            $req = $bdd->prepare('SELECT p.name name, l.quantity quantity, l.total total
+                                  FROM order_line l 
+                                  INNER JOIN product p 
+                                  WHERE p.id = l.product_id
+                                  AND l.order_id = :order_id');
+            $req->execute(array(':order_id' => $order['id']));
+
+            $orders[$i]['lines'] = $req->fetchAll();
+        }
+
     }
     else {
         session_destroy();
@@ -34,22 +52,29 @@
 
         <div class="name">Order History :</div><br/>
         <table>
-            <tr class="name-order">
-                <td>Command of 17/09 at 16pm :</td>
-                <td></td>
-                <td class="price">$4</td>
-            </tr>
 
-            <tr class="list-order">
-                <td>Croissant</td>
-                <td>Qte:3</td>
-                <td class="price">$3</td>
-            </tr>
-            <tr class="list-order">
-                <td>Bread </td>
-                <td>Qte:1</td>
-                <td class="price">$1</td>
-            </tr>
+            <?php
+                foreach ($orders as $order) {
+                    ?>
+                    <tr class="name-order">
+                        <td>Command of <?php echo $order['date_order']; ?> :</td>
+                        <td></td>
+                        <td class="price">$<?php echo $order['total']; ?></td>
+                    </tr>
+                    <?php
+
+                    foreach($order['lines'] as $line) {
+                        ?>
+                        <tr class="list-order">
+                            <td><?php echo $line['name']; ?></td>
+                            <td>Qte:<?php echo $line['quantity']; ?></td>
+                            <td class="price">$<?php echo $line['total']; ?></td>
+                        </tr>
+                        <?php
+                    }
+
+                }
+            ?>
 
         </table>
 

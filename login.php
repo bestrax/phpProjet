@@ -83,7 +83,7 @@ if(!empty($_POST['username']) && !empty($_POST['password'])) {
                 <div class="form-control">
                     <label for="email">e-mail</label>
                     <input type="hidden" name="from_login" value="1" />
-                    <input type="text" name="mail" id="mail" />
+                    <input type="text" name="mail" id="mail" title="mail" />
                 </div>
 
                 <div class="form-submit">

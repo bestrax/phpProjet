@@ -73,7 +73,7 @@ else {
             foreach ($orders as $order) {
                 ?>
                 <tr class="name-order <?php echo $order['delivered'] == 1 ? 'delivered' : ''; ?>">
-                    <td>Command of <?php echo $order['date_order']; ?>  <?php echo $order['delivered'] == 1 ? '(delivered)' : '(waiting)'; ?></td>
+                    <td>Command of <?php echo $order['date_order']; ?>  <?php echo $order['delivered'] == 1 ? '(delivered)' : '(waiting)'; ?> for <?php echo $order['date_delivered']; ?></td>
                     <td></td>
                     <td class="price">$<?php echo $order['total']; ?></td>
                 </tr>

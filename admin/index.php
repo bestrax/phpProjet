@@ -150,6 +150,9 @@
                     <td><?php echo $product['name']; ?></td>
                     <td><?php echo $product['category']; ?></td>
                     <td>
+                            <a href="add.php?id=<?php echo $product['id']; ?>" class="no-link">
+                                <i class="fa fa-pencil color-blue margin-pencil" aria-hidden="true"></i>
+                            </a>
                             <span onClick="confirmDeleteProduct(<?php echo $product['id'];?>)">
                                 <i class="fa fa-times color-red" aria-hidden="true"></i>
                             </span>

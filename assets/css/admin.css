@@ -77,6 +77,14 @@ textarea {
     color: #F44336;
 }
 
+.color-blue {
+    color: #2196F3;
+}
+
+.margin-pencil {
+    margin-right: 5px;
+}
+
 form {
     margin-bottom: 0;
 }
@@ -180,4 +188,9 @@ label {
     padding: 0;
     margin: 0;
     font-size: small;
+}
+
+.image-product {
+    width: 33vw;
+    margin-top: 20px;
 }

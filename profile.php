@@ -57,7 +57,7 @@
                 foreach ($orders as $order) {
                     ?>
                     <tr class="name-order">
-                        <td>Command of <?php echo $order['date_order']; ?> :</td>
+                        <td>Command of <?php echo $order['date_order']; ?>  for <?php echo $order['date_delivered']; ?> :</td>
                         <td></td>
                         <td class="price">$<?php echo $order['total']; ?></td>
                     </tr>

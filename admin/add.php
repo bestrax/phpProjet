@@ -19,7 +19,8 @@ if($result = $req->fetch()) {
             || !empty($_POST['description']) )
         $validation = true;
 
-    if($validation && !empty($_POST['name']) && !empty($_POST['category']) && !empty($_POST['price'])
+    //To add a new product
+    if($validation && empty($_GET['id']) && !empty($_POST['name']) && !empty($_POST['category']) && !empty($_POST['price'])
         && !empty($_POST['description']) ) {
 
 
@@ -72,6 +73,96 @@ if($result = $req->fetch()) {
             $errorMsg = 'The file is not an image !';
         }
 
+    }
+
+    //To modify a product
+    else if ($validation && !empty($_GET['id']) && !empty($_POST['name']) && !empty($_POST['category']) && !empty($_POST['price'])
+        && !empty($_POST['description']) ) {
+
+
+        //Check if it's an image
+        if (!empty($_FILES["image"]["tmp_name"]) && getimagesize($_FILES["image"]["tmp_name"]) !== false) {
+
+            //Check the size if the image
+            if ($_FILES["image"]["size"] > 500000)
+                $errorMsg = 'Your image is too large !';
+            else {
+
+                // Check the extension of the image
+                $extension = pathinfo($_FILES["image"]["name"])['extension'];
+                if($extension != "jpg" && $extension != "png" && $extension != "jpeg")
+                    $errorMsg = 'Sorry, only JPG, JPEG, PNG files are allowed !';
+                else {
+
+                    //Check if one image doesn't already exist with this extension
+                    $path = 'assets/uploads/';
+                    $name = '';
+                    do {
+                        $name = time().rand(0, 100).'.'.$extension;
+                    } while (file_exists($path.$name));
+
+                    //We try to move the image, if it doesn't work we show an error
+                    if (move_uploaded_file($_FILES["image"]["tmp_name"], $path.$name)) {
+
+
+                        $req = $bdd->prepare('SELECT image FROM `product` WHERE id=:id');
+                        $req->execute(array(':id' => $_GET['id']));
+
+                        $val = $req->fetch();
+                        if(!empty($val['image']) && file_exists('assets/uploads/'.$val['image']))
+                            unlink('assets/uploads/'.$val['image']);
+
+                        $req = $bdd->prepare('UPDATE `product` SET name=:name, category_id=:category_id, price=:price, description=:description, image=:image WHERE id=:id');
+                        $req = $req->execute(array(':name' => $_POST['name'],
+                            ':category_id' => $_POST['category'],
+                            ':price' => $_POST['price'],
+                            ':description' => $_POST['description'],
+                            ':image' => $name,
+                            ':id' => $_GET['id']));
+
+                        if ($req) {
+                            header('Location: index.php');
+                            exit();
+                        }
+                        else
+                            $errorMsg = 'An unknow error occured';
+
+                    } else
+                        $errorMsg = 'An unknow error occured while uploading the file';
+
+                }
+
+            }
+
+        } else {
+            $req = $bdd->prepare('UPDATE `product` SET name=:name, category_id=:category_id, price=:price, description=:description WHERE id=:id');
+            $req = $req->execute(array(':name' => $_POST['name'],
+                ':category_id' => $_POST['category'],
+                ':price' => $_POST['price'],
+                ':description' => $_POST['description'],
+                ':id' => $_GET['id']));
+
+            if ($req) {
+                header('Location: index.php');
+                exit();
+            }
+            else
+                $errorMsg = 'An unknow error occured';
+        }
+
+
+    }
+
+    if (!empty($_GET['id'])) {
+        $req = $bdd->prepare('SELECT * FROM product WHERE id=:id');
+        $req->execute(array(':id' => $_GET['id']));
+        $value = $req->fetch();
+
+        $_POST['name'] = $value['name'];
+        $_POST['category'] = $value['category_id'];
+        $_POST['price'] = $value['price'];
+        $_POST['description'] = $value['description'];
+        $image = $value['image'];
 
     }
 
@@ -98,10 +189,10 @@ else {
     <div id="admin">
 
         <div class="head">
-            New Product
+            <?php echo !empty($_GET['id']) ? 'Modify' : 'New'; ?> Product
         </div>
 
-        <form method="post" action="add.php" enctype="multipart/form-data">
+        <form method="post" action="add.php<?php echo !empty($_GET['id']) ? '?id='.$_GET['id'] : ''; ?>" enctype="multipart/form-data">
 
             <?php echo !empty($errorMsg)?'<p class="error-message">'.$errorMsg.'</p>':''; ?>
 
@@ -144,9 +235,17 @@ else {
                 <input type="file" name="image" id="image" />
             </div>
 
+            <?php
+                if(!empty($image)) {
+                    ?>
+                    <img src="../assets/uploads/<?php echo $image; ?>" class="image-product" />
+                    <?php
+                }
+            ?>
+
 
             <div class="form-submit">
-                <button type="submit" class="button btn-lg">Add <i class="fa fa-arrow-right"></i></button>
+                <button type="submit" class="button btn-lg"><?php echo !empty($_GET['id']) ? 'Modify' : 'Add'; ?> <i class="fa fa-arrow-right"></i></button>
             </div>
 
         </form>

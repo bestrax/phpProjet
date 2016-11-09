@@ -35,7 +35,7 @@
                         ':date_delivered' => $cartInfo['pickup']));
     $order = $bdd->lastInsertId();
 
-    echo $order;
+    $content = "Hello,\n\n Your order number $order which will be ready to be pick-up at $cartInfo[pickup]. You ordered the following items :\n\n";
 
     foreach ($_SESSION['cart'] as $item) {
         $req = $bdd->prepare('SELECT id, name, price FROM product WHERE id=:id');
@@ -49,9 +49,19 @@
                             ':quantity' => $item['quantity'],
                             ':total' => $item['quantity'] * $value['price']));
 
+        $content .= "- $item[quantity] x $value[name] (\$$value[price]) = ".($item['quantity'] * $value['price'])."\n";
+
         $cart[] = array('item' => $value, 'quantity' => $item['quantity']);
         $cartInfo['total'] += $item['quantity'] * $value['price'];
     }
+
+    $content .= "\nTotal : \$$cartInfo[total]\n\nThank's for your order.\n\nBest Regards,\n\nBreadExpress";
+
+    $req = $bdd->prepare('SELECT mail from user WHERE id=:id');
+    $req->execute(array(':id' => $_SESSION['user_id']));
+    $mail = $req->fetch();
+
+    mail($mail['mail'], "BreadExpress - Order number $order", $content);
 
     $req = $bdd->prepare('UPDATE `order` set total=:total WHERE id=:id');
     $req->execute(array(':id' => $order,

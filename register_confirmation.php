@@ -22,7 +22,7 @@
         </div>
 
         <div class="content">
-            <p>Your registration is done, please verify your e-mail adress in order to validate your account.</p>
+            <p>Your registration is done, we sent you an e-mail.</p>
         </div>
 
     </div>

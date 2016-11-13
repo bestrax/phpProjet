@@ -11,12 +11,13 @@ if(!empty($_POST['username']) && !empty($_POST['password'])) {
 
     require_once 'assets/php/config/bdd.php';
 
-    $req = $bdd->prepare('SELECT `id` FROM `user` WHERE username LIKE :username OR password LIKE :password');
+    $req = $bdd->prepare('SELECT `id`, `password` FROM `user` WHERE username LIKE :username');
 
-    $req->execute(array(':username' => htmlentities($_POST['username']),
-        ':password' => hash('sha256', $_POST['password'])));
+    $req->execute(array(':username' => htmlentities($_POST['username'])));
 
-    if($result = $req->fetch()) {
+    $result = $req->fetch();
+
+    if(!empty($result['password']) && hash_equals($result['password'], crypt($_POST['password'], $result['password']))) {
         $_SESSION['user_id'] = $result['id'];
 
         //If the user was confirming its order

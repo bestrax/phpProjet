@@ -38,10 +38,14 @@ if($validation && !empty($_POST['first_name']) && !empty($_POST['last_name']) &&
             if($req->fetchColumn() != 0)
                 $errorMsg = 'An user already exist with this e-mail adress or this username';
             else {
+
+                $salt = sprintf("$2a$%02d$", 10) . strtr(base64_encode(mcrypt_create_iv(16, MCRYPT_DEV_URANDOM)), '+', '.');
+                $hash = crypt($_POST['password'], $salt);
+
                 $req = $bdd->prepare('INSERT INTO `user` (username, password, mail, first_name, last_name) VALUES (:username, :password, :mail, :first_name, :last_name)');
 
                 $req = $req->execute(array(':username' => $_POST['username'],
-                    ':password' => hash('sha256', $_POST['password']),
+                    ':password' => $hash,
                     ':mail' => htmlentities($_POST['mail']),
                     ':first_name' => htmlentities($_POST['first_name']),
                     ':last_name' => htmlentities($_POST['last_name'])));

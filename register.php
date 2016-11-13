@@ -88,38 +88,38 @@ if($validation && !empty($_POST['first_name']) && !empty($_POST['last_name']) &&
                 <div class="form-control">
                     <?php echo $validation && empty($_POST['last_name']) ?'<p class="missing-field">This field is compulsory</p>':''; ?>
                     <label for="last_name">Last name</label><span class="obligatoire">*</span>
-                    <input type="text" name="last_name" id="last_name" value="<?php echo !empty($_POST['last_name'])?$_POST['last_name']:'';?>"/>
+                    <input type="text" name="last_name" id="last_name" value="<?php echo !empty($_POST['last_name'])?$_POST['last_name']:'';?>" oninput="validateString(this)"/>
                 </div>
 
                 <div class="form-control">
                     <?php echo $validation && empty($_POST['first_name']) ?'<p class="missing-field">This field is compulsory</p>':''; ?>
                     <label for="first_name">First name</label><span class="obligatoire">*</span>
-                    <input type="text" name="first_name" id="first_name" value="<?php echo !empty($_POST['first_name'])?$_POST['first_name']:'';?>"/>
+                    <input type="text" name="first_name" id="first_name" value="<?php echo !empty($_POST['first_name'])?$_POST['first_name']:'';?>" oninput="validateString(this)"/>
                 </div>
 
                 <div class="form-control">
                     <?php echo $validation && empty($_POST['mail']) ?'<p class="missing-field">This field is compulsory</p>':''; ?>
                     <label for="mail">E-mail</label><span class="obligatoire">*</span>
-                    <input type="email" name="mail" id="mail" value="<?php echo !empty($_POST['mail'])?$_POST['mail']:'';?>" />
+                    <input type="email" name="mail" id="mail" value="<?php echo !empty($_POST['mail'])?$_POST['mail']:'';?>" oninput="validateEmail(this)"/>
                     <p class="mail-warning">The e-mail address will not be made public and will not be used only for the reception of a new password or for the reception of certain wished notifications.</p>
                 </div>
 
                 <div class="form-control">
                     <?php echo $validation && empty($_POST['username']) ?'<p class="missing-field">This field is compulsory</p>':''; ?>
                     <label for="username">User name</label><span class="obligatoire">*</span>
-                    <input type="text" name="username" id="username" value="<?php echo !empty($_POST['username'])?$_POST['username']:'';?>"/>
+                    <input type="text" name="username" id="username" value="<?php echo !empty($_POST['username'])?$_POST['username']:'';?>" oninput="validateString(this)"/>
                 </div>
 
                 <div class="form-control">
                     <?php echo $validation && empty($_POST['password']) ?'<p class="missing-field">This field is compulsory</p>':''; ?>
                     <label for="password">Password</label><span class="obligatoire">*</span>
-                    <input type="password" name="password" id="password" />
+                    <input type="password" name="password" id="password" oninput="validatePassword()"/>
                 </div>
 
                  <div class="form-control">
                      <?php echo $validation && empty($_POST['password-confirmation']) ?'<p class="missing-field">This field is compulsory</p>':''; ?>
                     <label for="password-confirmation"> Retry Password</label><span class="obligatoire">*</span>
-                    <input type="password" name="password-confirmation" id="password-confirmation" />
+                    <input type="password" name="password-confirmation" id="password-confirmation" oninput="validatePassword()"/>
                 </div>
                 <div class="form-submit">
                     <button type="submit" class="button btn-lg">Register <i class="fa fa-arrow-right"></i></button>
@@ -132,6 +132,8 @@ if($validation && !empty($_POST['first_name']) && !empty($_POST['last_name']) &&
 
    
 </div>
+
+<script src="assets/js/validate.js"></script>
 
 <?php
     include 'assets/php/partials/footer.php';

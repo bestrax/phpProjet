@@ -279,4 +279,18 @@ body {
     color: #388E3C;
 }
 
+@media (min-width: 767px) {
+    .hidden-sm {
+        display: none!important;
+    }
+}
+
+.validInput {
+    border: #4CAF50 solid 1px;
+}
+
+.errorInput {
+    border: #F44336 solid 1px;
+}
+
 

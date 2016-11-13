@@ -50,6 +50,10 @@
 
                 <div class="user">
 
+                    <div class="hidden-sm">
+                        <a href="<?php echo $path; ?>index.php" class="no-link"><i class="fa fa-home" aria-hidden="true"></i>Home</a>
+                    </div>
+
                     <?php if(!isset($_SESSION['user_id'])) {
                         ?>
 
@@ -78,9 +82,6 @@
                     } ?>
 
                 </div>
-
-                <div class="cart"><a href="<?php echo $path; ?>cart.php" class="no-link"><i class="fa fa-shopping-cart"
-                                                                        aria-hidden="true"></i>Cart</a></div>
             </div>
 
             <div class="row" id="order-process">

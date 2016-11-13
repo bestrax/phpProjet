@@ -13,7 +13,7 @@ if(!empty($_POST['username']) && !empty($_POST['password'])) {
 
     $req = $bdd->prepare('SELECT `id` FROM `user` WHERE username LIKE :username OR password LIKE :password');
 
-    $req->execute(array(':username' => $_POST['username'],
+    $req->execute(array(':username' => htmlentities($_POST['username']),
         ':password' => hash('sha256', $_POST['password'])));
 
     if($result = $req->fetch()) {

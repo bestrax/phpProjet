@@ -15,7 +15,7 @@ if($result = $req->fetch()) {
 
     if(isset($_POST['delivered']) && !empty($_POST['id'])) {
         $req = $bdd->prepare('UPDATE `order` SET delivered=1 WHERE id=:id');
-        $req->execute(array(':id' => $_POST['id']));
+        $req->execute(array(':id' => htmlentities($_POST['id'])));
     }
 
     $req = $bdd->prepare('SELECT * FROM `order` ORDER BY delivered ASC');

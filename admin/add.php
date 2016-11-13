@@ -49,10 +49,10 @@ if($result = $req->fetch()) {
                     if (move_uploaded_file($_FILES["image"]["tmp_name"], $path.$name)) {
 
                         $req = $bdd->prepare('INSERT INTO `product` (name, category_id, price, description, image) VALUES (:name, :category_id, :price, :description, :image)');
-                        $req = $req->execute(array(':name' => $_POST['name'],
-                            ':category_id' => $_POST['category'],
-                            ':price' => $_POST['price'],
-                            ':description' => $_POST['description'],
+                        $req = $req->execute(array(':name' => htmlentities($_POST['name']),
+                            ':category_id' => htmlentities($_POST['category']),
+                            ':price' => htmlentities($_POST['price']),
+                            ':description' => htmlentities($_POST['description']),
                             ':image' => $name));
 
                         if ($req) {
@@ -113,12 +113,12 @@ if($result = $req->fetch()) {
                             unlink('assets/uploads/'.$val['image']);
 
                         $req = $bdd->prepare('UPDATE `product` SET name=:name, category_id=:category_id, price=:price, description=:description, image=:image WHERE id=:id');
-                        $req = $req->execute(array(':name' => $_POST['name'],
-                            ':category_id' => $_POST['category'],
-                            ':price' => $_POST['price'],
-                            ':description' => $_POST['description'],
+                        $req = $req->execute(array(':name' => htmlentities($_POST['name']),
+                            ':category_id' => htmlentities($_POST['category']),
+                            ':price' => htmlentities($_POST['price']),
+                            ':description' => htmlentities($_POST['description']),
                             ':image' => $name,
-                            ':id' => $_GET['id']));
+                            ':id' => htmlentities($_GET['id'])));
 
                         if ($req) {
                             header('Location: index.php');
@@ -136,11 +136,11 @@ if($result = $req->fetch()) {
 
         } else {
             $req = $bdd->prepare('UPDATE `product` SET name=:name, category_id=:category_id, price=:price, description=:description WHERE id=:id');
-            $req = $req->execute(array(':name' => $_POST['name'],
-                ':category_id' => $_POST['category'],
-                ':price' => $_POST['price'],
-                ':description' => $_POST['description'],
-                ':id' => $_GET['id']));
+            $req = $req->execute(array(':name' => htmlentities($_POST['name']),
+                ':category_id' => htmlentities($_POST['category']),
+                ':price' => htmlentities($_POST['price']),
+                ':description' => htmlentities($_POST['description']),
+                ':id' => htmlentities($_GET['id'])));
 
             if ($req) {
                 header('Location: index.php');

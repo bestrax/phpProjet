@@ -24,20 +24,20 @@
 
 		// If the cart doesn't exist
 		if(!isset($_SESSION['cart']))
-			$_SESSION['cart'] = array(array('id' => $_POST['id'], 'quantity' => intval($_POST['quantity'])));
+			$_SESSION['cart'] = array(array('id' => htmlentities($_POST['id']), 'quantity' => intval($_POST['quantity'])));
 
 		//If the cart exists we try to add the quantity or we add the item
 		else {
 			$found = false;
 			foreach ($_SESSION['cart'] as $i => $item) {
-				if ($item['id'] == $_POST['id']) {
+				if ($item['id'] == htmlentities($_POST['id'])) {
 					$_SESSION['cart'][$i]['quantity'] += intval($_POST['quantity']);
 					$found = true;
 				}
 			}
 
 			if(!$found)
-				$_SESSION['cart'][] = array('id' => $_POST['id'], 'quantity' => intval($_POST['quantity']));
+				$_SESSION['cart'][] = array('id' => htmlentities($_POST['id']), 'quantity' => intval($_POST['quantity']));
 		}
 
 	}
@@ -46,7 +46,7 @@
 	if (!empty($_POST['modify'])) {
 
 		foreach ($_SESSION['cart'] as $i => $item) {
-			if ($item['id'] == $_POST['modify']) {
+			if ($item['id'] == htmlentities($_POST['modify'])) {
 				if (isset($_POST['plus']))
 					$_SESSION['cart'][$i]['quantity']++;
 				else if (isset($_POST['minus']))

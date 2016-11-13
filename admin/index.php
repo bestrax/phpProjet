@@ -17,16 +17,16 @@
 
         if(!empty($_POST['category'])) {
             $req = $bdd->prepare('INSERT INTO `category` (name) VALUES (:name)');
-            $req->execute(array(':name' => $_POST['category']));
+            $req->execute(array(':name' => htmlentities($_POST['category'])));
         }
 
         if(!empty($_GET['category']) && isset($_GET['delete'])) {
 
             $req = $bdd->prepare('DELETE FROM `product` WHERE category_id=:id');
-            $req->execute(array(':id' => $_GET['category']));
+            $req->execute(array(':id' => htmlentities($_GET['category'])));
 
             $req = $bdd->prepare('DELETE FROM `category` WHERE id=:id');
-            $req->execute(array(':id' => $_GET['category']));
+            $req->execute(array(':id' => htmlentities($_GET['category'])));
         }
 
         $req = $bdd->prepare('SELECT * FROM `category`');
@@ -41,14 +41,14 @@
         if(!empty($_GET['product']) && isset($_GET['delete'])) {
 
             $req = $bdd->prepare('SELECT `image` FROM `product` WHERE id=:id');
-            $req->execute(array(':id' => $_GET['product']));
+            $req->execute(array(':id' => htmlentities($_GET['product'])));
 
             $image = $req->fetchColumn();
             if(!empty($image) && file_exists('assets/uploads/'.$image))
                 unlink('assets/uploads/'.$image);
 
             $req = $bdd->prepare('DELETE FROM `product` WHERE id=:id');
-            $req->execute(array(':id' => $_GET['product']));
+            $req->execute(array(':id' => htmlentities($_GET['product'])));
         }
 
         $req = $bdd->prepare('  SELECT p.id id, p.name name, c.name category

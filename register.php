@@ -32,8 +32,8 @@ if($validation && !empty($_POST['first_name']) && !empty($_POST['last_name']) &&
 
             $req = $bdd->prepare('SELECT COUNT(*) FROM `user` WHERE mail LIKE :mail OR username LIKE :username');
 
-            $req->execute(array(':username' => $_POST['username'],
-                ':mail' => $_POST['mail']));
+            $req->execute(array(':username' => htmlentities($_POST['username']),
+                ':mail' => htmlentities($_POST['mail'])));
 
             if($req->fetchColumn() != 0)
                 $errorMsg = 'An user already exist with this e-mail adress or this username';
@@ -42,9 +42,9 @@ if($validation && !empty($_POST['first_name']) && !empty($_POST['last_name']) &&
 
                 $req = $req->execute(array(':username' => $_POST['username'],
                     ':password' => hash('sha256', $_POST['password']),
-                    ':mail' => $_POST['mail'],
-                    ':first_name' => $_POST['first_name'],
-                    ':last_name' => $_POST['last_name']));
+                    ':mail' => htmlentities($_POST['mail']),
+                    ':first_name' => htmlentities($_POST['first_name']),
+                    ':last_name' => htmlentities($_POST['last_name'])));
 
                 if ($req) {
 

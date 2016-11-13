@@ -47,9 +47,9 @@ if($validation && !empty($_POST['first_name']) && !empty($_POST['last_name']) &&
 
                 $req = $req->execute(array(':username' => $_POST['username'],
                     ':password' => hash('sha256', $_POST['password']),
-                    ':mail' => $_POST['mail'],
-                    ':first_name' => $_POST['first_name'],
-                    ':last_name' => $_POST['last_name'],
+                    ':mail' => htmlentities($_POST['mail']),
+                    ':first_name' => htmlentities($_POST['first_name']),
+                    ':last_name' => htmlentities($_POST['last_name']),
                     ':id' => $_SESSION['user_id']));
 
                 if ($req) {

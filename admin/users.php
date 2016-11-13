@@ -16,8 +16,8 @@ if($result = $req->fetch()) {
 
     if(isset($_POST['user']) && !empty($_POST['id']) && !empty($_POST['level'])) {
         $req = $bdd->prepare('UPDATE user SET level=:level WHERE id=:id');
-        $req->execute(array(':level' => $_POST['level'],
-                            ':id' => $_POST['id']));
+        $req->execute(array(':level' => htmlentities($_POST['level']),
+                            ':id' => htmlentities($_POST['id'])));
     }
 
     $req = $bdd->prepare('SELECT * FROM `user`');

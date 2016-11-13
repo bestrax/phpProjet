@@ -30,7 +30,7 @@ function validateEmail(e) {
 }
 
 function validatePassword() {
-    if(document.getElementById('password').value.length != 0 && document.getElementById('password-confirmation').value.length != 0) {
+    if(strlen(document.getElementById('password').value) != 0 && strlen(document.getElementById('password-confirmation').value) != 0) {
         if (document.getElementById('password').value != document.getElementById('password-confirmation').value) {
             removeClass(document.getElementById('password'), 'validInput');
             removeClass(document.getElementById('password-confirmation'), 'validInput');

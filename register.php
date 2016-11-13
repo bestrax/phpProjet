@@ -113,13 +113,13 @@ if($validation && !empty($_POST['first_name']) && !empty($_POST['last_name']) &&
                 <div class="form-control">
                     <?php echo $validation && empty($_POST['password']) ?'<p class="missing-field">This field is compulsory</p>':''; ?>
                     <label for="password">Password</label><span class="obligatoire">*</span>
-                    <input type="password" name="password" id="password" oninput="validatePassword()"/>
+                    <input type="password" name="password" id="password" oninput="validatePassword(this)"/>
                 </div>
 
                  <div class="form-control">
                      <?php echo $validation && empty($_POST['password-confirmation']) ?'<p class="missing-field">This field is compulsory</p>':''; ?>
                     <label for="password-confirmation"> Retry Password</label><span class="obligatoire">*</span>
-                    <input type="password" name="password-confirmation" id="password-confirmation" oninput="validatePassword()"/>
+                    <input type="password" name="password-confirmation" id="password-confirmation" oninput="validatePassword(this)"/>
                 </div>
                 <div class="form-submit">
                     <button type="submit" class="button btn-lg">Register <i class="fa fa-arrow-right"></i></button>

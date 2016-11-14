@@ -52,7 +52,7 @@ if($validation && !empty($_POST['first_name']) && !empty($_POST['last_name']) &&
 
                 if ($req) {
 
-                    $content = "Hello $_POST[first_name] $_POST[last_name],\n\nYour account on Bread Express is now ready to be use !\nYou can now order online on our website.\n\nBest Regars,\n\nBreadExpress";
+                    $content = "Hello $_POST[first_name] $_POST[last_name],\n\nYour account on Bread Express is now ready to be use !\nYou can now order online on our website.\n\nBest Regards,\n\nBreadExpress";
 
                     mail($_POST['mail'], 'Your account on BreadExpress', $content);
 

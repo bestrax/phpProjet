@@ -199,13 +199,13 @@ else {
             <div class="form-control">
                 <?php echo $validation && empty($_POST['name']) ?'<p class="missing-field">This field is compulsory</p>':''; ?>
                 <label for="name">Name</label><span class="obligatoire">*</span>
-                <input type="text" name="name" id="name" value="<?php echo !empty($_POST['name'])?$_POST['name']:'';?>"/>
+                <input type="text" name="name" id="name" value="<?php echo !empty($_POST['name'])?$_POST['name']:'';?>" required/>
             </div>
 
             <div class="form-control">
                 <?php echo $validation && empty($_POST['category']) ?'<p class="missing-field">This field is compulsory</p>':''; ?>
                 <label for="category">Category</label><span class="obligatoire">*</span>
-                <select id="category" name="category">
+                <select id="category" name="category" required>
                     <?php
                         foreach($categories as $category) {
                             ?>
@@ -221,13 +221,13 @@ else {
             <div class="form-control">
                 <?php echo $validation && empty($_POST['price']) ?'<p class="missing-field">This field is compulsory</p>':''; ?>
                 <label for="price">Price</label><span class="obligatoire">*</span>
-                <input type="number" name="price" id="price" value="<?php echo !empty($_POST['price'])?$_POST['price']:'';?>" />
+                <input type="number" name="price" id="price" value="<?php echo !empty($_POST['price'])?$_POST['price']:'';?>" required/>
             </div>
 
             <div class="form-control">
                 <?php echo $validation && empty($_POST['description']) ?'<p class="missing-field">This field is compulsory</p>':''; ?>
                 <label for="description">Description</label><span class="obligatoire">*</span>
-                <textarea name="description" id="description"><?php echo !empty($_POST['description'])?$_POST['description']:'';?></textarea>
+                <textarea name="description" id="description" required><?php echo !empty($_POST['description'])?$_POST['description']:'';?></textarea>
             </div>
 
             <div class="form-control">

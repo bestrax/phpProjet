@@ -25,12 +25,13 @@ if($validation && !empty($_POST['first_name']) && !empty($_POST['last_name']) &&
     else {
         require_once 'assets/php/config/bdd.php';
 
-        $req = $bdd->prepare('SELECT COUNT(*) FROM `user` WHERE password LIKE :password AND id = :id');
+        $req = $bdd->prepare('SELECT `password` FROM `user` WHERE id=:id');
 
-        $req->execute(array(':password' => hash('sha256', $_POST['password']),
-            ':id' => $_SESSION['user_id']));
+        $req->execute(array(':id' => $_SESSION['user_id']));
 
-        if($req->fetchColumn() == 0)
+        $result = $req->fetch();
+
+        if(empty($result['password']) || !hash_equals($result['password'], crypt($_POST['password'], $result['password'])))
             $errorMsg = 'Incorrect password !';
         else {
 
@@ -43,10 +44,9 @@ if($validation && !empty($_POST['first_name']) && !empty($_POST['last_name']) &&
             if ($req->fetchColumn() != 0)
                 $errorMsg = 'An user already exist with this e-mail adress or this username';
             else {
-                $req = $bdd->prepare('UPDATE `user` SET `username` = :username , `first_name` = :first_name , `last_name` = :last_name ,  `mail` = :mail WHERE `id` = :id AND `password` LIKE :password');
+                $req = $bdd->prepare('UPDATE `user` SET `username` = :username , `first_name` = :first_name , `last_name` = :last_name ,  `mail` = :mail WHERE `id` = :id');
 
                 $req = $req->execute(array(':username' => $_POST['username'],
-                    ':password' => hash('sha256', $_POST['password']),
                     ':mail' => htmlentities($_POST['mail']),
                     ':first_name' => htmlentities($_POST['first_name']),
                     ':last_name' => htmlentities($_POST['last_name']),

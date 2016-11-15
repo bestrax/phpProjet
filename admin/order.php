@@ -32,6 +32,11 @@ if($result = $req->fetch()) {
         $req->execute(array(':order_id' => $order['id']));
 
         $orders[$i]['lines'] = $req->fetchAll();
+
+        $req = $bdd->prepare('SELECT first_name, last_name FROM user WHERE id= :user_id');
+        $req->execute(array(':user_id' => $order['user_id']));
+
+        $orders[$i]['user'] = $req->fetch();
     }
 
 }
@@ -76,6 +81,11 @@ else {
                     <td>Command of <?php echo $order['date_order']; ?>  <?php echo $order['delivered'] == 1 ? '(delivered)' : '(waiting)'; ?> for <?php echo $order['date_delivered']; ?></td>
                     <td></td>
                     <td class="price">$<?php echo $order['total']; ?></td>
+                </tr>
+                <tr class="list-order <?php echo $order['delivered'] == 1 ? 'delivered' : ''; ?>">
+                    <td><?php echo $order['user']['last_name'].' '.$order['user']['first_name']; ?></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <?php
 

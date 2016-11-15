@@ -27,6 +27,7 @@
         <html>
 
         <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
             <title>Bread Express <?php echo !empty($name)?' - '.$name:''; ?></title>
             <link rel="stylesheet" type="text/css" href="assets/css/master.css">
 

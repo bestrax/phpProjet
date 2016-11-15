@@ -33,7 +33,7 @@
 
     <div class="content">
         <p>On Bake Express you can order and pay online for the products you want. Then you just need to come to our office to pick-up your order.<br/>
-        You will no more loose time in waiting for a product that is not available !</p>
+        You will no more lose time in waiting for a product that is not available !</p>
         <div id="map"></div>
     </div>
 

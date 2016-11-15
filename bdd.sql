@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost:3306
--- Généré le :  Sam 05 Novembre 2016 à 17:56
+-- Généré le :  Mar 15 Novembre 2016 à 02:06
 -- Version du serveur :  5.5.42
 -- Version de PHP :  5.6.6
 
@@ -23,15 +23,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `category` (
   `id` int(11) NOT NULL,
   `name` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
-
---
--- Contenu de la table `category`
---
-
-INSERT INTO `category` (`id`, `name`) VALUES
-  (5, 'pain'),
-  (6, 'croissant');
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -42,11 +34,11 @@ INSERT INTO `category` (`id`, `name`) VALUES
 CREATE TABLE `order` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `total` int(11) NOT NULL,
-  `date_order` int(11) NOT NULL,
-  `delivered` tinyint(1) NOT NULL,
-  `date_delivered` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `total` float NOT NULL,
+  `date_order` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `delivered` tinyint(1) NOT NULL DEFAULT '0',
+  `date_delivered` varchar(10) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -58,10 +50,10 @@ CREATE TABLE `order_line` (
   `id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
-  `price` decimal(10,0) NOT NULL,
+  `price` float NOT NULL,
   `quantity` int(11) NOT NULL,
-  `total` decimal(10,0) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `total` float NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -76,17 +68,7 @@ CREATE TABLE `product` (
   `description` text NOT NULL,
   `image` text NOT NULL,
   `price` float NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
-
---
--- Contenu de la table `product`
---
-
-INSERT INTO `product` (`id`, `category_id`, `name`, `description`, `image`, `price`) VALUES
-  (1, 5, 'Pain 1', 'qsdfqdsf\r\nqs\r\ndfqs\r\nfdqs\r\nfus', '', 13.6),
-  (2, 5, 'pain 2', 'blabla', '', 1.3),
-  (3, 6, 'croissant 1', 'blbabdsffs', '', 123),
-  (4, 6, 'croissant 2', 'lalala', '', 1.9);
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -103,14 +85,7 @@ CREATE TABLE `user` (
   `last_name` text NOT NULL,
   `date_register` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `level` int(11) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
-
---
--- Contenu de la table `user`
---
-
-INSERT INTO `user` (`id`, `username`, `password`, `mail`, `first_name`, `last_name`, `date_register`, `level`) VALUES
-  (9, 'bestrax', '19b88ce550d709f7d8f95b28f66a07716f182ca179c842e98b5e85d317aca8d3', 'bastien.robert@gmail.com', 'robert', 'bastien', '2016-11-03 19:58:14', 2);
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
 -- Index pour les tables exportées
@@ -154,24 +129,24 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT pour la table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT pour la table `order`
 --
 ALTER TABLE `order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT pour la table `order_line`
 --
 ALTER TABLE `order_line`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT pour la table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=30;
 --
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
